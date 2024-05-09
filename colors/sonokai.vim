@@ -1,26 +1,26 @@
 " -----------------------------------------------------------------------------
-" Name:         pastel-sonokai
+" Name:         ponokai
 " Description:  High Contrast & Vivid Color Scheme based on Monokai Pro
 " Author:       Sainnhepark <i@sainnhe.dev>
-" Website:      https://github.com/shawilly/pastel-sonokai/
+" Website:      https://github.com/shawilly/ponokai/
 " License:      MIT
 " -----------------------------------------------------------------------------
 
 " Initialization: {{{
-let s:configuration = pastel-sonokai#get_configuration()
-let s:palette = pastel-sonokai#get_palette(s:configuration.style, s:configuration.colors_override)
+let s:configuration = ponokai#get_configuration()
+let s:palette = ponokai#get_palette(s:configuration.style, s:configuration.colors_override)
 let s:path = expand('<sfile>:p') " the path of this script
 let s:last_modified = 'Wed Mar 27 02:48:35 PM UTC 2024'
-let g:pastel-sonokai_loaded_file_types = []
+let g:ponokai_loaded_file_types = []
 
-if !(exists('g:colors_name') && g:colors_name ==# 'pastel-sonokai' && s:configuration.better_performance)
+if !(exists('g:colors_name') && g:colors_name ==# 'ponokai' && s:configuration.better_performance)
   highlight clear
   if exists('syntax_on')
     syntax reset
   endif
 endif
 
-let g:colors_name = 'pastel-sonokai'
+let g:colors_name = 'ponokai'
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
   finish
@@ -29,141 +29,141 @@ endif
 " Common Highlight Groups: {{{
 " UI: {{{
 if s:configuration.transparent_background >= 1
-  call pastel-sonokai#highlight('Normal', s:palette.fg, s:palette.none)
-  call pastel-sonokai#highlight('NormalNC', s:palette.fg, s:palette.none)
-  call pastel-sonokai#highlight('Terminal', s:palette.fg, s:palette.none)
+  call ponokai#highlight('Normal', s:palette.fg, s:palette.none)
+  call ponokai#highlight('NormalNC', s:palette.fg, s:palette.none)
+  call ponokai#highlight('Terminal', s:palette.fg, s:palette.none)
   if s:configuration.show_eob
-    call pastel-sonokai#highlight('EndOfBuffer', s:palette.bg4, s:palette.none)
+    call ponokai#highlight('EndOfBuffer', s:palette.bg4, s:palette.none)
   else
-    call pastel-sonokai#highlight('EndOfBuffer', s:palette.bg0, s:palette.none)
+    call ponokai#highlight('EndOfBuffer', s:palette.bg0, s:palette.none)
   endif
-  call pastel-sonokai#highlight('Folded', s:palette.grey, s:palette.none)
-  call pastel-sonokai#highlight('ToolbarLine', s:palette.fg, s:palette.none)
-  call pastel-sonokai#highlight('FoldColumn', s:palette.grey_dim, s:palette.none)
+  call ponokai#highlight('Folded', s:palette.grey, s:palette.none)
+  call ponokai#highlight('ToolbarLine', s:palette.fg, s:palette.none)
+  call ponokai#highlight('FoldColumn', s:palette.grey_dim, s:palette.none)
 else
-  call pastel-sonokai#highlight('Normal', s:palette.fg, s:palette.bg0)
+  call ponokai#highlight('Normal', s:palette.fg, s:palette.bg0)
   if s:configuration.dim_inactive_windows
-    call pastel-sonokai#highlight('NormalNC', s:palette.fg, s:palette.bg_dim)
+    call ponokai#highlight('NormalNC', s:palette.fg, s:palette.bg_dim)
   else
-    call pastel-sonokai#highlight('NormalNC', s:palette.fg, s:palette.bg0)
+    call ponokai#highlight('NormalNC', s:palette.fg, s:palette.bg0)
   endif
-  call pastel-sonokai#highlight('Terminal', s:palette.fg, s:palette.bg0)
+  call ponokai#highlight('Terminal', s:palette.fg, s:palette.bg0)
   if s:configuration.show_eob
-    call pastel-sonokai#highlight('EndOfBuffer', s:palette.bg4, s:palette.none)
+    call ponokai#highlight('EndOfBuffer', s:palette.bg4, s:palette.none)
   else
-    call pastel-sonokai#highlight('EndOfBuffer', s:palette.bg0, s:palette.none)
+    call ponokai#highlight('EndOfBuffer', s:palette.bg0, s:palette.none)
   endif
-  call pastel-sonokai#highlight('Folded', s:palette.grey, s:palette.bg1)
-  call pastel-sonokai#highlight('ToolbarLine', s:palette.fg, s:palette.bg2)
-  call pastel-sonokai#highlight('FoldColumn', s:palette.grey_dim, s:palette.none)
+  call ponokai#highlight('Folded', s:palette.grey, s:palette.bg1)
+  call ponokai#highlight('ToolbarLine', s:palette.fg, s:palette.bg2)
+  call ponokai#highlight('FoldColumn', s:palette.grey_dim, s:palette.none)
 endif
-call pastel-sonokai#highlight('SignColumn', s:palette.fg, s:palette.none)
-call pastel-sonokai#highlight('IncSearch', s:palette.bg0, s:palette.bg_red)
-call pastel-sonokai#highlight('Search', s:palette.bg0, s:palette.bg_green)
+call ponokai#highlight('SignColumn', s:palette.fg, s:palette.none)
+call ponokai#highlight('IncSearch', s:palette.bg0, s:palette.bg_red)
+call ponokai#highlight('Search', s:palette.bg0, s:palette.bg_green)
 highlight! link CurSearch IncSearch
-call pastel-sonokai#highlight('ColorColumn', s:palette.none, s:palette.bg1)
-call pastel-sonokai#highlight('Conceal', s:palette.grey_dim, s:palette.none)
+call ponokai#highlight('ColorColumn', s:palette.none, s:palette.bg1)
+call ponokai#highlight('Conceal', s:palette.grey_dim, s:palette.none)
 if s:configuration.cursor ==# 'auto'
-  call pastel-sonokai#highlight('Cursor', s:palette.none, s:palette.none, 'reverse')
+  call ponokai#highlight('Cursor', s:palette.none, s:palette.none, 'reverse')
 else
-  call pastel-sonokai#highlight('Cursor', s:palette.bg0, s:palette[s:configuration.cursor])
+  call ponokai#highlight('Cursor', s:palette.bg0, s:palette[s:configuration.cursor])
 endif
 highlight! link vCursor Cursor
 highlight! link iCursor Cursor
 highlight! link lCursor Cursor
 highlight! link CursorIM Cursor
 if &diff
-  call pastel-sonokai#highlight('CursorLine', s:palette.none, s:palette.none, 'underline')
-  call pastel-sonokai#highlight('CursorColumn', s:palette.none, s:palette.none, 'bold')
+  call ponokai#highlight('CursorLine', s:palette.none, s:palette.none, 'underline')
+  call ponokai#highlight('CursorColumn', s:palette.none, s:palette.none, 'bold')
 else
-  call pastel-sonokai#highlight('CursorLine', s:palette.none, s:palette.bg1)
-  call pastel-sonokai#highlight('CursorColumn', s:palette.none, s:palette.bg1)
+  call ponokai#highlight('CursorLine', s:palette.none, s:palette.bg1)
+  call ponokai#highlight('CursorColumn', s:palette.none, s:palette.bg1)
 endif
-call pastel-sonokai#highlight('LineNr', s:palette.grey_dim, s:palette.none)
+call ponokai#highlight('LineNr', s:palette.grey_dim, s:palette.none)
 if &diff
-  call pastel-sonokai#highlight('CursorLineNr', s:palette.fg, s:palette.none, 'underline')
+  call ponokai#highlight('CursorLineNr', s:palette.fg, s:palette.none, 'underline')
 else
-  call pastel-sonokai#highlight('CursorLineNr', s:palette.fg, s:palette.none)
+  call ponokai#highlight('CursorLineNr', s:palette.fg, s:palette.none)
 endif
-call pastel-sonokai#highlight('DiffAdd', s:palette.none, s:palette.diff_green)
-call pastel-sonokai#highlight('DiffChange', s:palette.none, s:palette.diff_blue)
-call pastel-sonokai#highlight('DiffDelete', s:palette.none, s:palette.diff_red)
-call pastel-sonokai#highlight('DiffText', s:palette.bg0, s:palette.blue)
-call pastel-sonokai#highlight('Directory', s:palette.green, s:palette.none)
-call pastel-sonokai#highlight('ErrorMsg', s:palette.red, s:palette.none, 'bold,underline')
-call pastel-sonokai#highlight('WarningMsg', s:palette.yellow, s:palette.none, 'bold')
-call pastel-sonokai#highlight('ModeMsg', s:palette.fg, s:palette.none, 'bold')
-call pastel-sonokai#highlight('MoreMsg', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('MatchParen', s:palette.none, s:palette.bg4)
-call pastel-sonokai#highlight('NonText', s:palette.bg4, s:palette.none)
-call pastel-sonokai#highlight('Whitespace', s:palette.bg4, s:palette.none)
-call pastel-sonokai#highlight('SpecialKey', s:palette.bg4, s:palette.none)
-call pastel-sonokai#highlight('Pmenu', s:palette.fg, s:palette.bg2)
-call pastel-sonokai#highlight('PmenuSbar', s:palette.none, s:palette.bg2)
+call ponokai#highlight('DiffAdd', s:palette.none, s:palette.diff_green)
+call ponokai#highlight('DiffChange', s:palette.none, s:palette.diff_blue)
+call ponokai#highlight('DiffDelete', s:palette.none, s:palette.diff_red)
+call ponokai#highlight('DiffText', s:palette.bg0, s:palette.blue)
+call ponokai#highlight('Directory', s:palette.green, s:palette.none)
+call ponokai#highlight('ErrorMsg', s:palette.red, s:palette.none, 'bold,underline')
+call ponokai#highlight('WarningMsg', s:palette.yellow, s:palette.none, 'bold')
+call ponokai#highlight('ModeMsg', s:palette.fg, s:palette.none, 'bold')
+call ponokai#highlight('MoreMsg', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('MatchParen', s:palette.none, s:palette.bg4)
+call ponokai#highlight('NonText', s:palette.bg4, s:palette.none)
+call ponokai#highlight('Whitespace', s:palette.bg4, s:palette.none)
+call ponokai#highlight('SpecialKey', s:palette.bg4, s:palette.none)
+call ponokai#highlight('Pmenu', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('PmenuSbar', s:palette.none, s:palette.bg2)
 if s:configuration.menu_selection_background ==# 'blue'
-  call pastel-sonokai#highlight('PmenuSel', s:palette.bg0, s:palette.bg_blue)
+  call ponokai#highlight('PmenuSel', s:palette.bg0, s:palette.bg_blue)
 elseif s:configuration.menu_selection_background ==# 'green'
-  call pastel-sonokai#highlight('PmenuSel', s:palette.bg0, s:palette.bg_green)
+  call ponokai#highlight('PmenuSel', s:palette.bg0, s:palette.bg_green)
 elseif s:configuration.menu_selection_background ==# 'red'
-  call pastel-sonokai#highlight('PmenuSel', s:palette.bg0, s:palette.bg_red)
+  call ponokai#highlight('PmenuSel', s:palette.bg0, s:palette.bg_red)
 endif
-call pastel-sonokai#highlight('PmenuKind', s:palette.green, s:palette.bg2)
-call pastel-sonokai#highlight('PmenuExtra', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('PmenuKind', s:palette.green, s:palette.bg2)
+call ponokai#highlight('PmenuExtra', s:palette.grey, s:palette.bg2)
 highlight! link WildMenu PmenuSel
-call pastel-sonokai#highlight('PmenuThumb', s:palette.none, s:palette.grey)
+call ponokai#highlight('PmenuThumb', s:palette.none, s:palette.grey)
 if s:configuration.float_style ==# 'dim'
-  call pastel-sonokai#highlight('NormalFloat', s:palette.fg, s:palette.bg_dim)
-  call pastel-sonokai#highlight('FloatBorder', s:palette.grey, s:palette.bg_dim)
-  call pastel-sonokai#highlight('FloatTitle', s:palette.red, s:palette.bg_dim, 'bold')
+  call ponokai#highlight('NormalFloat', s:palette.fg, s:palette.bg_dim)
+  call ponokai#highlight('FloatBorder', s:palette.grey, s:palette.bg_dim)
+  call ponokai#highlight('FloatTitle', s:palette.red, s:palette.bg_dim, 'bold')
 else
-  call pastel-sonokai#highlight('NormalFloat', s:palette.fg, s:palette.bg2)
-  call pastel-sonokai#highlight('FloatBorder', s:palette.grey, s:palette.bg2)
-  call pastel-sonokai#highlight('FloatTitle', s:palette.red, s:palette.bg2, 'bold')
+  call ponokai#highlight('NormalFloat', s:palette.fg, s:palette.bg2)
+  call ponokai#highlight('FloatBorder', s:palette.grey, s:palette.bg2)
+  call ponokai#highlight('FloatTitle', s:palette.red, s:palette.bg2, 'bold')
 endif
-call pastel-sonokai#highlight('Question', s:palette.yellow, s:palette.none)
+call ponokai#highlight('Question', s:palette.yellow, s:palette.none)
 if s:configuration.spell_foreground ==# 'none'
-  call pastel-sonokai#highlight('SpellBad', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
-  call pastel-sonokai#highlight('SpellCap', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
-  call pastel-sonokai#highlight('SpellLocal', s:palette.none, s:palette.none, 'undercurl', s:palette.blue)
-  call pastel-sonokai#highlight('SpellRare', s:palette.none, s:palette.none, 'undercurl', s:palette.purple)
+  call ponokai#highlight('SpellBad', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
+  call ponokai#highlight('SpellCap', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
+  call ponokai#highlight('SpellLocal', s:palette.none, s:palette.none, 'undercurl', s:palette.blue)
+  call ponokai#highlight('SpellRare', s:palette.none, s:palette.none, 'undercurl', s:palette.purple)
 else
-  call pastel-sonokai#highlight('SpellBad', s:palette.red, s:palette.none, 'undercurl', s:palette.red)
-  call pastel-sonokai#highlight('SpellCap', s:palette.yellow, s:palette.none, 'undercurl', s:palette.yellow)
-  call pastel-sonokai#highlight('SpellLocal', s:palette.blue, s:palette.none, 'undercurl', s:palette.blue)
-  call pastel-sonokai#highlight('SpellRare', s:palette.purple, s:palette.none, 'undercurl', s:palette.purple)
+  call ponokai#highlight('SpellBad', s:palette.red, s:palette.none, 'undercurl', s:palette.red)
+  call ponokai#highlight('SpellCap', s:palette.yellow, s:palette.none, 'undercurl', s:palette.yellow)
+  call ponokai#highlight('SpellLocal', s:palette.blue, s:palette.none, 'undercurl', s:palette.blue)
+  call ponokai#highlight('SpellRare', s:palette.purple, s:palette.none, 'undercurl', s:palette.purple)
 endif
 if s:configuration.transparent_background == 2
-  call pastel-sonokai#highlight('StatusLine', s:palette.fg, s:palette.none)
-  call pastel-sonokai#highlight('StatusLineTerm', s:palette.fg, s:palette.none)
-  call pastel-sonokai#highlight('StatusLineNC', s:palette.grey, s:palette.none)
-  call pastel-sonokai#highlight('StatusLineTermNC', s:palette.grey, s:palette.none)
-  call pastel-sonokai#highlight('TabLine', s:palette.fg, s:palette.bg4)
-  call pastel-sonokai#highlight('TabLineFill', s:palette.grey, s:palette.none)
-  call pastel-sonokai#highlight('TabLineSel', s:palette.bg0, s:palette.bg_red)
+  call ponokai#highlight('StatusLine', s:palette.fg, s:palette.none)
+  call ponokai#highlight('StatusLineTerm', s:palette.fg, s:palette.none)
+  call ponokai#highlight('StatusLineNC', s:palette.grey, s:palette.none)
+  call ponokai#highlight('StatusLineTermNC', s:palette.grey, s:palette.none)
+  call ponokai#highlight('TabLine', s:palette.fg, s:palette.bg4)
+  call ponokai#highlight('TabLineFill', s:palette.grey, s:palette.none)
+  call ponokai#highlight('TabLineSel', s:palette.bg0, s:palette.bg_red)
 else
-  call pastel-sonokai#highlight('StatusLine', s:palette.fg, s:palette.bg3)
-  call pastel-sonokai#highlight('StatusLineTerm', s:palette.fg, s:palette.bg3)
-  call pastel-sonokai#highlight('StatusLineNC', s:palette.grey, s:palette.bg1)
-  call pastel-sonokai#highlight('StatusLineTermNC', s:palette.grey, s:palette.bg1)
-  call pastel-sonokai#highlight('TabLine', s:palette.fg, s:palette.bg4)
-  call pastel-sonokai#highlight('TabLineFill', s:palette.grey, s:palette.bg1)
-  call pastel-sonokai#highlight('TabLineSel', s:palette.bg0, s:palette.bg_red)
+  call ponokai#highlight('StatusLine', s:palette.fg, s:palette.bg3)
+  call ponokai#highlight('StatusLineTerm', s:palette.fg, s:palette.bg3)
+  call ponokai#highlight('StatusLineNC', s:palette.grey, s:palette.bg1)
+  call ponokai#highlight('StatusLineTermNC', s:palette.grey, s:palette.bg1)
+  call ponokai#highlight('TabLine', s:palette.fg, s:palette.bg4)
+  call ponokai#highlight('TabLineFill', s:palette.grey, s:palette.bg1)
+  call ponokai#highlight('TabLineSel', s:palette.bg0, s:palette.bg_red)
 endif
 if s:configuration.dim_inactive_windows
-  call pastel-sonokai#highlight('VertSplit', s:palette.bg4, s:palette.bg_dim)
+  call ponokai#highlight('VertSplit', s:palette.bg4, s:palette.bg_dim)
 else
-  call pastel-sonokai#highlight('VertSplit', s:palette.black, s:palette.none)
+  call ponokai#highlight('VertSplit', s:palette.black, s:palette.none)
 endif
 highlight! link WinSeparator VertSplit
-call pastel-sonokai#highlight('Visual', s:palette.none, s:palette.bg3)
-call pastel-sonokai#highlight('VisualNOS', s:palette.none, s:palette.bg3, 'underline')
-call pastel-sonokai#highlight('QuickFixLine', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('Debug', s:palette.yellow, s:palette.none)
-call pastel-sonokai#highlight('debugPC', s:palette.bg0, s:palette.green)
-call pastel-sonokai#highlight('debugBreakpoint', s:palette.bg0, s:palette.red)
-call pastel-sonokai#highlight('ToolbarButton', s:palette.bg0, s:palette.bg_blue)
+call ponokai#highlight('Visual', s:palette.none, s:palette.bg3)
+call ponokai#highlight('VisualNOS', s:palette.none, s:palette.bg3, 'underline')
+call ponokai#highlight('QuickFixLine', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('Debug', s:palette.yellow, s:palette.none)
+call ponokai#highlight('debugPC', s:palette.bg0, s:palette.green)
+call ponokai#highlight('debugBreakpoint', s:palette.bg0, s:palette.red)
+call ponokai#highlight('ToolbarButton', s:palette.bg0, s:palette.bg_blue)
 if has('nvim')
-  call pastel-sonokai#highlight('Substitute', s:palette.bg0, s:palette.yellow)
+  call ponokai#highlight('Substitute', s:palette.bg0, s:palette.yellow)
   highlight! link WinBarNC Grey
   highlight! link DiagnosticFloatingError ErrorFloat
   highlight! link DiagnosticFloatingWarn WarningFloat
@@ -219,100 +219,100 @@ endif
 " }}}
 " Syntax: {{{
 if s:configuration.enable_italic
-  call pastel-sonokai#highlight('Type', s:palette.blue, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('Structure', s:palette.blue, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('StorageClass', s:palette.blue, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('Identifier', s:palette.orange, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('Constant', s:palette.orange, s:palette.none, 'italic')
+  call ponokai#highlight('Type', s:palette.blue, s:palette.none, 'italic')
+  call ponokai#highlight('Structure', s:palette.blue, s:palette.none, 'italic')
+  call ponokai#highlight('StorageClass', s:palette.blue, s:palette.none, 'italic')
+  call ponokai#highlight('Identifier', s:palette.orange, s:palette.none, 'italic')
+  call ponokai#highlight('Constant', s:palette.orange, s:palette.none, 'italic')
 else
-  call pastel-sonokai#highlight('Type', s:palette.blue, s:palette.none)
-  call pastel-sonokai#highlight('Structure', s:palette.blue, s:palette.none)
-  call pastel-sonokai#highlight('StorageClass', s:palette.blue, s:palette.none)
-  call pastel-sonokai#highlight('Identifier', s:palette.orange, s:palette.none)
-  call pastel-sonokai#highlight('Constant', s:palette.orange, s:palette.none)
+  call ponokai#highlight('Type', s:palette.blue, s:palette.none)
+  call ponokai#highlight('Structure', s:palette.blue, s:palette.none)
+  call ponokai#highlight('StorageClass', s:palette.blue, s:palette.none)
+  call ponokai#highlight('Identifier', s:palette.orange, s:palette.none)
+  call ponokai#highlight('Constant', s:palette.orange, s:palette.none)
 endif
-call pastel-sonokai#highlight('PreProc', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('PreCondit', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Include', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Keyword', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Define', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Typedef', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Exception', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Conditional', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Repeat', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Statement', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Macro', s:palette.purple, s:palette.none)
-call pastel-sonokai#highlight('Error', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Label', s:palette.purple, s:palette.none)
-call pastel-sonokai#highlight('Special', s:palette.purple, s:palette.none)
-call pastel-sonokai#highlight('SpecialChar', s:palette.purple, s:palette.none)
-call pastel-sonokai#highlight('Boolean', s:palette.purple, s:palette.none)
-call pastel-sonokai#highlight('String', s:palette.yellow, s:palette.none)
-call pastel-sonokai#highlight('Character', s:palette.yellow, s:palette.none)
-call pastel-sonokai#highlight('Number', s:palette.purple, s:palette.none)
-call pastel-sonokai#highlight('Float', s:palette.purple, s:palette.none)
-call pastel-sonokai#highlight('Function', s:palette.green, s:palette.none)
-call pastel-sonokai#highlight('Operator', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Title', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('Tag', s:palette.orange, s:palette.none)
-call pastel-sonokai#highlight('Delimiter', s:palette.fg, s:palette.none)
-call pastel-sonokai#highlight('Todo', s:palette.bg0, s:palette.blue, 'bold')
+call ponokai#highlight('PreProc', s:palette.red, s:palette.none)
+call ponokai#highlight('PreCondit', s:palette.red, s:palette.none)
+call ponokai#highlight('Include', s:palette.red, s:palette.none)
+call ponokai#highlight('Keyword', s:palette.red, s:palette.none)
+call ponokai#highlight('Define', s:palette.red, s:palette.none)
+call ponokai#highlight('Typedef', s:palette.red, s:palette.none)
+call ponokai#highlight('Exception', s:palette.red, s:palette.none)
+call ponokai#highlight('Conditional', s:palette.red, s:palette.none)
+call ponokai#highlight('Repeat', s:palette.red, s:palette.none)
+call ponokai#highlight('Statement', s:palette.red, s:palette.none)
+call ponokai#highlight('Macro', s:palette.purple, s:palette.none)
+call ponokai#highlight('Error', s:palette.red, s:palette.none)
+call ponokai#highlight('Label', s:palette.purple, s:palette.none)
+call ponokai#highlight('Special', s:palette.purple, s:palette.none)
+call ponokai#highlight('SpecialChar', s:palette.purple, s:palette.none)
+call ponokai#highlight('Boolean', s:palette.purple, s:palette.none)
+call ponokai#highlight('String', s:palette.yellow, s:palette.none)
+call ponokai#highlight('Character', s:palette.yellow, s:palette.none)
+call ponokai#highlight('Number', s:palette.purple, s:palette.none)
+call ponokai#highlight('Float', s:palette.purple, s:palette.none)
+call ponokai#highlight('Function', s:palette.green, s:palette.none)
+call ponokai#highlight('Operator', s:palette.red, s:palette.none)
+call ponokai#highlight('Title', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('Tag', s:palette.orange, s:palette.none)
+call ponokai#highlight('Delimiter', s:palette.fg, s:palette.none)
+call ponokai#highlight('Todo', s:palette.bg0, s:palette.blue, 'bold')
 if s:configuration.disable_italic_comment
-  call pastel-sonokai#highlight('Comment', s:palette.grey, s:palette.none)
-  call pastel-sonokai#highlight('SpecialComment', s:palette.grey, s:palette.none)
+  call ponokai#highlight('Comment', s:palette.grey, s:palette.none)
+  call ponokai#highlight('SpecialComment', s:palette.grey, s:palette.none)
 else
-  call pastel-sonokai#highlight('Comment', s:palette.grey, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('SpecialComment', s:palette.grey, s:palette.none, 'italic')
+  call ponokai#highlight('Comment', s:palette.grey, s:palette.none, 'italic')
+  call ponokai#highlight('SpecialComment', s:palette.grey, s:palette.none, 'italic')
 endif
-call pastel-sonokai#highlight('Ignore', s:palette.grey, s:palette.none)
-call pastel-sonokai#highlight('Underlined', s:palette.none, s:palette.none, 'underline')
+call ponokai#highlight('Ignore', s:palette.grey, s:palette.none)
+call ponokai#highlight('Underlined', s:palette.none, s:palette.none, 'underline')
 " }}}
 " Predefined Highlight Groups: {{{
-call pastel-sonokai#highlight('Fg', s:palette.fg, s:palette.none)
-call pastel-sonokai#highlight('Grey', s:palette.grey, s:palette.none)
-call pastel-sonokai#highlight('Red', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('Orange', s:palette.orange, s:palette.none)
-call pastel-sonokai#highlight('Yellow', s:palette.yellow, s:palette.none)
-call pastel-sonokai#highlight('Green', s:palette.green, s:palette.none)
-call pastel-sonokai#highlight('Blue', s:palette.blue, s:palette.none)
-call pastel-sonokai#highlight('Purple', s:palette.purple, s:palette.none)
+call ponokai#highlight('Fg', s:palette.fg, s:palette.none)
+call ponokai#highlight('Grey', s:palette.grey, s:palette.none)
+call ponokai#highlight('Red', s:palette.red, s:palette.none)
+call ponokai#highlight('Orange', s:palette.orange, s:palette.none)
+call ponokai#highlight('Yellow', s:palette.yellow, s:palette.none)
+call ponokai#highlight('Green', s:palette.green, s:palette.none)
+call ponokai#highlight('Blue', s:palette.blue, s:palette.none)
+call ponokai#highlight('Purple', s:palette.purple, s:palette.none)
 if s:configuration.enable_italic
-  call pastel-sonokai#highlight('RedItalic', s:palette.red, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('OrangeItalic', s:palette.orange, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('YellowItalic', s:palette.yellow, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('GreenItalic', s:palette.green, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('BlueItalic', s:palette.blue, s:palette.none, 'italic')
-  call pastel-sonokai#highlight('PurpleItalic', s:palette.purple, s:palette.none, 'italic')
+  call ponokai#highlight('RedItalic', s:palette.red, s:palette.none, 'italic')
+  call ponokai#highlight('OrangeItalic', s:palette.orange, s:palette.none, 'italic')
+  call ponokai#highlight('YellowItalic', s:palette.yellow, s:palette.none, 'italic')
+  call ponokai#highlight('GreenItalic', s:palette.green, s:palette.none, 'italic')
+  call ponokai#highlight('BlueItalic', s:palette.blue, s:palette.none, 'italic')
+  call ponokai#highlight('PurpleItalic', s:palette.purple, s:palette.none, 'italic')
 else
-  call pastel-sonokai#highlight('RedItalic', s:palette.red, s:palette.none)
-  call pastel-sonokai#highlight('OrangeItalic', s:palette.orange, s:palette.none)
-  call pastel-sonokai#highlight('YellowItalic', s:palette.yellow, s:palette.none)
-  call pastel-sonokai#highlight('GreenItalic', s:palette.green, s:palette.none)
-  call pastel-sonokai#highlight('BlueItalic', s:palette.blue, s:palette.none)
-  call pastel-sonokai#highlight('PurpleItalic', s:palette.purple, s:palette.none)
+  call ponokai#highlight('RedItalic', s:palette.red, s:palette.none)
+  call ponokai#highlight('OrangeItalic', s:palette.orange, s:palette.none)
+  call ponokai#highlight('YellowItalic', s:palette.yellow, s:palette.none)
+  call ponokai#highlight('GreenItalic', s:palette.green, s:palette.none)
+  call ponokai#highlight('BlueItalic', s:palette.blue, s:palette.none)
+  call ponokai#highlight('PurpleItalic', s:palette.purple, s:palette.none)
 endif
-call pastel-sonokai#highlight('RedSign', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('OrangeSign', s:palette.orange, s:palette.none)
-call pastel-sonokai#highlight('YellowSign', s:palette.yellow, s:palette.none)
-call pastel-sonokai#highlight('GreenSign', s:palette.green, s:palette.none)
-call pastel-sonokai#highlight('BlueSign', s:palette.blue, s:palette.none)
-call pastel-sonokai#highlight('PurpleSign', s:palette.purple, s:palette.none)
+call ponokai#highlight('RedSign', s:palette.red, s:palette.none)
+call ponokai#highlight('OrangeSign', s:palette.orange, s:palette.none)
+call ponokai#highlight('YellowSign', s:palette.yellow, s:palette.none)
+call ponokai#highlight('GreenSign', s:palette.green, s:palette.none)
+call ponokai#highlight('BlueSign', s:palette.blue, s:palette.none)
+call ponokai#highlight('PurpleSign', s:palette.purple, s:palette.none)
 if s:configuration.diagnostic_text_highlight
-  call pastel-sonokai#highlight('ErrorText', s:palette.none, s:palette.diff_red, 'undercurl', s:palette.red)
-  call pastel-sonokai#highlight('WarningText', s:palette.none, s:palette.diff_yellow, 'undercurl', s:palette.yellow)
-  call pastel-sonokai#highlight('InfoText', s:palette.none, s:palette.diff_blue, 'undercurl', s:palette.blue)
-  call pastel-sonokai#highlight('HintText', s:palette.none, s:palette.diff_green, 'undercurl', s:palette.green)
+  call ponokai#highlight('ErrorText', s:palette.none, s:palette.diff_red, 'undercurl', s:palette.red)
+  call ponokai#highlight('WarningText', s:palette.none, s:palette.diff_yellow, 'undercurl', s:palette.yellow)
+  call ponokai#highlight('InfoText', s:palette.none, s:palette.diff_blue, 'undercurl', s:palette.blue)
+  call ponokai#highlight('HintText', s:palette.none, s:palette.diff_green, 'undercurl', s:palette.green)
 else
-  call pastel-sonokai#highlight('ErrorText', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
-  call pastel-sonokai#highlight('WarningText', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
-  call pastel-sonokai#highlight('InfoText', s:palette.none, s:palette.none, 'undercurl', s:palette.blue)
-  call pastel-sonokai#highlight('HintText', s:palette.none, s:palette.none, 'undercurl', s:palette.green)
+  call ponokai#highlight('ErrorText', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
+  call ponokai#highlight('WarningText', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
+  call ponokai#highlight('InfoText', s:palette.none, s:palette.none, 'undercurl', s:palette.blue)
+  call ponokai#highlight('HintText', s:palette.none, s:palette.none, 'undercurl', s:palette.green)
 endif
 if s:configuration.diagnostic_line_highlight
-  call pastel-sonokai#highlight('ErrorLine', s:palette.none, s:palette.diff_red)
-  call pastel-sonokai#highlight('WarningLine', s:palette.none, s:palette.diff_yellow)
-  call pastel-sonokai#highlight('InfoLine', s:palette.none, s:palette.diff_blue)
-  call pastel-sonokai#highlight('HintLine', s:palette.none, s:palette.diff_green)
+  call ponokai#highlight('ErrorLine', s:palette.none, s:palette.diff_red)
+  call ponokai#highlight('WarningLine', s:palette.none, s:palette.diff_yellow)
+  call ponokai#highlight('InfoLine', s:palette.none, s:palette.diff_blue)
+  call ponokai#highlight('HintLine', s:palette.none, s:palette.diff_green)
 else
   highlight clear ErrorLine
   highlight clear WarningLine
@@ -330,24 +330,24 @@ elseif s:configuration.diagnostic_virtual_text ==# 'colored'
   highlight! link VirtualTextInfo Blue
   highlight! link VirtualTextHint Green
 else
-  call pastel-sonokai#highlight('VirtualTextWarning', s:palette.yellow, s:palette.diff_yellow)
-  call pastel-sonokai#highlight('VirtualTextError', s:palette.red, s:palette.diff_red)
-  call pastel-sonokai#highlight('VirtualTextInfo', s:palette.blue, s:palette.diff_blue)
-  call pastel-sonokai#highlight('VirtualTextHint', s:palette.green, s:palette.diff_green)
+  call ponokai#highlight('VirtualTextWarning', s:palette.yellow, s:palette.diff_yellow)
+  call ponokai#highlight('VirtualTextError', s:palette.red, s:palette.diff_red)
+  call ponokai#highlight('VirtualTextInfo', s:palette.blue, s:palette.diff_blue)
+  call ponokai#highlight('VirtualTextHint', s:palette.green, s:palette.diff_green)
 endif
-call pastel-sonokai#highlight('ErrorFloat', s:palette.red, s:palette.none)
-call pastel-sonokai#highlight('WarningFloat', s:palette.yellow, s:palette.none)
-call pastel-sonokai#highlight('InfoFloat', s:palette.blue, s:palette.none)
-call pastel-sonokai#highlight('HintFloat', s:palette.green, s:palette.none)
+call ponokai#highlight('ErrorFloat', s:palette.red, s:palette.none)
+call ponokai#highlight('WarningFloat', s:palette.yellow, s:palette.none)
+call ponokai#highlight('InfoFloat', s:palette.blue, s:palette.none)
+call ponokai#highlight('HintFloat', s:palette.green, s:palette.none)
 if &diff
-  call pastel-sonokai#highlight('CurrentWord', s:palette.bg0, s:palette.green)
+  call ponokai#highlight('CurrentWord', s:palette.bg0, s:palette.green)
 elseif s:configuration.current_word ==# 'grey background'
-  call pastel-sonokai#highlight('CurrentWord', s:palette.none, s:palette.bg2)
+  call ponokai#highlight('CurrentWord', s:palette.none, s:palette.bg2)
 else
-  call pastel-sonokai#highlight('CurrentWord', s:palette.none, s:palette.none, s:configuration.current_word)
+  call ponokai#highlight('CurrentWord', s:palette.none, s:palette.none, s:configuration.current_word)
 endif
 " Define a color for each LSP item kind to create highlights for nvim-cmp, aerial.nvim, nvim-navic and coc.nvim
-let g:pastel-sonokai_lsp_kind_color = [
+let g:ponokai_lsp_kind_color = [
       \ ["Array", "Yellow"],
       \ ["Boolean", "Yellow"],
       \ ["Class", "Blue"],
@@ -428,12 +428,12 @@ endif
 " }}}
 " Plugins: {{{
 " nvim-treesitter/nvim-treesitter {{{
-call pastel-sonokai#highlight('TSStrong', s:palette.none, s:palette.none, 'bold')
-call pastel-sonokai#highlight('TSEmphasis', s:palette.none, s:palette.none, 'italic')
-call pastel-sonokai#highlight('TSUnderline', s:palette.none, s:palette.none, 'underline')
-call pastel-sonokai#highlight('TSNote', s:palette.bg0, s:palette.green, 'bold')
-call pastel-sonokai#highlight('TSWarning', s:palette.bg0, s:palette.yellow, 'bold')
-call pastel-sonokai#highlight('TSDanger', s:palette.bg0, s:palette.red, 'bold')
+call ponokai#highlight('TSStrong', s:palette.none, s:palette.none, 'bold')
+call ponokai#highlight('TSEmphasis', s:palette.none, s:palette.none, 'italic')
+call ponokai#highlight('TSUnderline', s:palette.none, s:palette.none, 'underline')
+call ponokai#highlight('TSNote', s:palette.bg0, s:palette.green, 'bold')
+call ponokai#highlight('TSWarning', s:palette.bg0, s:palette.yellow, 'bold')
+call ponokai#highlight('TSDanger', s:palette.bg0, s:palette.red, 'bold')
 highlight! link TSAnnotation BlueItalic
 highlight! link TSAttribute BlueItalic
 highlight! link TSBoolean Purple
@@ -498,7 +498,7 @@ highlight! link TSType BlueItalic
 highlight! link TSTypeBuiltin BlueItalic
 highlight! link TSTypeDefinition BlueItalic
 highlight! link TSTypeQualifier Red
-call pastel-sonokai#highlight('TSURI', s:palette.blue, s:palette.none, 'underline')
+call ponokai#highlight('TSURI', s:palette.blue, s:palette.none, 'underline')
 highlight! link TSVariable Fg
 highlight! link TSVariableBuiltin PurpleItalic
 if has('nvim-0.8.0')
@@ -659,11 +659,11 @@ highlight! link TSModuleInfoBad Red
 highlight! link CopilotSuggestion Grey
 " }}}
 " neoclide/coc.nvim {{{
-call pastel-sonokai#highlight('CocHoverRange', s:palette.none, s:palette.none, 'bold,underline')
-call pastel-sonokai#highlight('CocSearch', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('CocPumSearch', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('CocMarkdownHeader', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('CocMarkdownLink', s:palette.green, s:palette.none, 'underline')
+call ponokai#highlight('CocHoverRange', s:palette.none, s:palette.none, 'bold,underline')
+call ponokai#highlight('CocSearch', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('CocPumSearch', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('CocMarkdownHeader', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('CocMarkdownLink', s:palette.green, s:palette.none, 'underline')
 highlight! link CocMarkdownCode Green
 highlight! link CocPumShortcut Grey
 highlight! link CocPumVirtualText Grey
@@ -829,23 +829,23 @@ highlight! link SyntasticWarningLine WarningLine
 if !exists('g:Lf_StlColorscheme')
   let g:Lf_StlColorscheme = 'one'
 endif
-call pastel-sonokai#highlight('Lf_hl_match', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('Lf_hl_match0', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('Lf_hl_match1', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('Lf_hl_match2', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('Lf_hl_match3', s:palette.yellow, s:palette.none, 'bold')
-call pastel-sonokai#highlight('Lf_hl_match4', s:palette.purple, s:palette.none, 'bold')
-call pastel-sonokai#highlight('Lf_hl_matchRefine', s:palette.yellow, s:palette.none, 'bold')
-call pastel-sonokai#highlight('Lf_hl_popup_normalMode', s:palette.bg0, s:palette.blue, 'bold')
-call pastel-sonokai#highlight('Lf_hl_popup_inputMode', s:palette.bg0, s:palette.green, 'bold')
-call pastel-sonokai#highlight('Lf_hl_popup_category', s:palette.fg, s:palette.bg4)
-call pastel-sonokai#highlight('Lf_hl_popup_nameOnlyMode', s:palette.fg, s:palette.bg3)
-call pastel-sonokai#highlight('Lf_hl_popup_fullPathMode', s:palette.fg, s:palette.bg3)
-call pastel-sonokai#highlight('Lf_hl_popup_fuzzyMode', s:palette.fg, s:palette.bg3)
-call pastel-sonokai#highlight('Lf_hl_popup_regexMode', s:palette.fg, s:palette.bg3)
-call pastel-sonokai#highlight('Lf_hl_popup_lineInfo', s:palette.bg0, s:palette.blue)
-call pastel-sonokai#highlight('Lf_hl_popup_total', s:palette.bg0, s:palette.red)
-call pastel-sonokai#highlight('Lf_hl_popup_cursor', s:palette.bg0, s:palette.blue)
+call ponokai#highlight('Lf_hl_match', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('Lf_hl_match0', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('Lf_hl_match1', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('Lf_hl_match2', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('Lf_hl_match3', s:palette.yellow, s:palette.none, 'bold')
+call ponokai#highlight('Lf_hl_match4', s:palette.purple, s:palette.none, 'bold')
+call ponokai#highlight('Lf_hl_matchRefine', s:palette.yellow, s:palette.none, 'bold')
+call ponokai#highlight('Lf_hl_popup_normalMode', s:palette.bg0, s:palette.blue, 'bold')
+call ponokai#highlight('Lf_hl_popup_inputMode', s:palette.bg0, s:palette.green, 'bold')
+call ponokai#highlight('Lf_hl_popup_category', s:palette.fg, s:palette.bg4)
+call ponokai#highlight('Lf_hl_popup_nameOnlyMode', s:palette.fg, s:palette.bg3)
+call ponokai#highlight('Lf_hl_popup_fullPathMode', s:palette.fg, s:palette.bg3)
+call ponokai#highlight('Lf_hl_popup_fuzzyMode', s:palette.fg, s:palette.bg3)
+call ponokai#highlight('Lf_hl_popup_regexMode', s:palette.fg, s:palette.bg3)
+call ponokai#highlight('Lf_hl_popup_lineInfo', s:palette.bg0, s:palette.blue)
+call ponokai#highlight('Lf_hl_popup_total', s:palette.bg0, s:palette.red)
+call ponokai#highlight('Lf_hl_popup_cursor', s:palette.bg0, s:palette.blue)
 highlight! link Lf_hl_cursorline Fg
 highlight! link Lf_hl_selection DiffAdd
 highlight! link Lf_hl_rgHighlight Visual
@@ -858,18 +858,18 @@ highlight! link Lf_hl_popup_blank Lf_hl_popup_window
 highlight! link Lf_hl_popup_spin Purple
 " }}}
 " liuchengxu/vim-clap {{{
-call pastel-sonokai#highlight('ClapSelected', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('ClapCurrentSelection', s:palette.none, s:palette.bg0, 'bold')
-call pastel-sonokai#highlight('ClapSpinner', s:palette.blue, s:palette.bg2, 'bold')
-call pastel-sonokai#highlight('ClapBlines', s:palette.fg, s:palette.none)
-call pastel-sonokai#highlight('ClapProviderId', s:palette.fg, s:palette.none, 'bold')
-call pastel-sonokai#highlight('ClapMatches1', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('ClapMatches2', s:palette.orange, s:palette.none, 'bold')
-call pastel-sonokai#highlight('ClapMatches3', s:palette.yellow, s:palette.none, 'bold')
-call pastel-sonokai#highlight('ClapMatches4', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('ClapMatches5', s:palette.purple, s:palette.none, 'bold')
-call pastel-sonokai#highlight('ClapFuzzyMatches', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('ClapNoMatchesFound', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('ClapSelected', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('ClapCurrentSelection', s:palette.none, s:palette.bg0, 'bold')
+call ponokai#highlight('ClapSpinner', s:palette.blue, s:palette.bg2, 'bold')
+call ponokai#highlight('ClapBlines', s:palette.fg, s:palette.none)
+call ponokai#highlight('ClapProviderId', s:palette.fg, s:palette.none, 'bold')
+call ponokai#highlight('ClapMatches1', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('ClapMatches2', s:palette.orange, s:palette.none, 'bold')
+call ponokai#highlight('ClapMatches3', s:palette.yellow, s:palette.none, 'bold')
+call ponokai#highlight('ClapMatches4', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('ClapMatches5', s:palette.purple, s:palette.none, 'bold')
+call ponokai#highlight('ClapFuzzyMatches', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('ClapNoMatchesFound', s:palette.red, s:palette.none, 'bold')
 highlight! link ClapInput Pmenu
 highlight! link ClapDisplay Pmenu
 highlight! link ClapPreview Pmenu
@@ -909,20 +909,20 @@ let g:fzf_colors = {
       \ }
 " }}}
 " Shougo/denite.nvim{{{
-call pastel-sonokai#highlight('deniteMatchedChar', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('deniteMatchedRange', s:palette.green, s:palette.none, 'bold,underline')
-call pastel-sonokai#highlight('deniteInput', s:palette.green, s:palette.bg1, 'bold')
-call pastel-sonokai#highlight('deniteStatusLineNumber', s:palette.purple, s:palette.bg1)
-call pastel-sonokai#highlight('deniteStatusLinePath', s:palette.fg, s:palette.bg1)
+call ponokai#highlight('deniteMatchedChar', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('deniteMatchedRange', s:palette.green, s:palette.none, 'bold,underline')
+call ponokai#highlight('deniteInput', s:palette.green, s:palette.bg1, 'bold')
+call ponokai#highlight('deniteStatusLineNumber', s:palette.purple, s:palette.bg1)
+call ponokai#highlight('deniteStatusLinePath', s:palette.fg, s:palette.bg1)
 highlight! link deniteSelectedLine Green
 " }}}
 " kien/ctrlp.vim{{{
-call pastel-sonokai#highlight('CtrlPMatch', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('CtrlPPrtBase', s:palette.grey, s:palette.none)
-call pastel-sonokai#highlight('CtrlPLinePre', s:palette.grey, s:palette.none)
-call pastel-sonokai#highlight('CtrlPMode1', s:palette.blue, s:palette.bg1, 'bold')
-call pastel-sonokai#highlight('CtrlPMode2', s:palette.bg1, s:palette.blue, 'bold')
-call pastel-sonokai#highlight('CtrlPStats', s:palette.grey, s:palette.bg1, 'bold')
+call ponokai#highlight('CtrlPMatch', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('CtrlPPrtBase', s:palette.grey, s:palette.none)
+call ponokai#highlight('CtrlPLinePre', s:palette.grey, s:palette.none)
+call ponokai#highlight('CtrlPMode1', s:palette.blue, s:palette.bg1, 'bold')
+call ponokai#highlight('CtrlPMode2', s:palette.bg1, s:palette.blue, 'bold')
+call ponokai#highlight('CtrlPStats', s:palette.grey, s:palette.bg1, 'bold')
 highlight! link CtrlPNoEntries Red
 highlight! link CtrlPPrtCursor Blue
 " }}}
@@ -951,16 +951,16 @@ highlight! link SignifyLineChangeDelete DiffChange
 highlight! link SignifyLineDelete DiffDelete
 " }}}
 " andymass/vim-matchup {{{
-call pastel-sonokai#highlight('MatchParenCur', s:palette.none, s:palette.none, 'bold')
-call pastel-sonokai#highlight('MatchWord', s:palette.none, s:palette.none, 'underline')
-call pastel-sonokai#highlight('MatchWordCur', s:palette.none, s:palette.none, 'underline')
+call ponokai#highlight('MatchParenCur', s:palette.none, s:palette.none, 'bold')
+call ponokai#highlight('MatchWord', s:palette.none, s:palette.none, 'underline')
+call ponokai#highlight('MatchWordCur', s:palette.none, s:palette.none, 'underline')
 " }}}
 " easymotion/vim-easymotion {{{
 highlight! link EasyMotionTarget Search
 highlight! link EasyMotionShade Grey
 " }}}
 " justinmk/vim-sneak {{{
-call pastel-sonokai#highlight('SneakLabelMask', s:palette.bg_green, s:palette.bg_green)
+call ponokai#highlight('SneakLabelMask', s:palette.bg_green, s:palette.bg_green)
 highlight! link Sneak Search
 highlight! link SneakLabel Search
 highlight! link SneakScope DiffText
@@ -973,7 +973,7 @@ highlight! link multiple_cursors_cursor Cursor
 highlight! link multiple_cursors_visual Visual
 " }}}
 " mg979/vim-visual-multi {{{
-call pastel-sonokai#highlight('VMCursor', s:palette.blue, s:palette.grey_dim)
+call ponokai#highlight('VMCursor', s:palette.blue, s:palette.grey_dim)
 let g:VM_Mono_hl = 'VMCursor'
 let g:VM_Extend_hl = 'Visual'
 let g:VM_Cursor_hl = 'VMCursor'
@@ -998,8 +998,8 @@ let g:indentLine_color_term = s:palette.grey_dim[1]
 " }}}
 " nathanaelkane/vim-indent-guides {{{
 if get(g:, 'indent_guides_auto_colors', 1) == 0
-  call pastel-sonokai#highlight('IndentGuidesOdd', s:palette.bg0, s:palette.bg1)
-  call pastel-sonokai#highlight('IndentGuidesEven', s:palette.bg0, s:palette.bg2)
+  call ponokai#highlight('IndentGuidesOdd', s:palette.bg0, s:palette.bg1)
+  call ponokai#highlight('IndentGuidesEven', s:palette.bg0, s:palette.bg2)
 endif
 " }}}
 " thiagoalessio/rainbow_levels.vim {{{
@@ -1034,8 +1034,8 @@ let g:limelight_conceal_ctermfg = s:palette.grey_dim[1]
 let g:limelight_conceal_guifg = s:palette.grey_dim[0]
 " }}}
 " unblevable/quick-scope {{{
-call pastel-sonokai#highlight('QuickScopePrimary', s:palette.green, s:palette.none, 'underline')
-call pastel-sonokai#highlight('QuickScopeSecondary', s:palette.blue, s:palette.none, 'underline')
+call ponokai#highlight('QuickScopePrimary', s:palette.green, s:palette.none, 'underline')
+call ponokai#highlight('QuickScopeSecondary', s:palette.blue, s:palette.none, 'underline')
 " }}}
 " APZelos/blamer.nvim {{{
 highlight! link Blamer Grey
@@ -1067,20 +1067,20 @@ highlight! link BookmarkAnnotationLine DiffAdd
 " }}}
 if has('nvim')
 " hrsh7th/nvim-cmp {{{
-call pastel-sonokai#highlight('CmpItemAbbrMatch', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('CmpItemAbbrMatchFuzzy', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('CmpItemAbbrMatch', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('CmpItemAbbrMatchFuzzy', s:palette.green, s:palette.none, 'bold')
 highlight! link CmpItemAbbr Fg
 highlight! link CmpItemAbbrDeprecated Grey
 highlight! link CmpItemMenu Fg
 highlight! link CmpItemKind Blue
-for kind in g:pastel-sonokai_lsp_kind_color
+for kind in g:ponokai_lsp_kind_color
   execute "highlight! link CmpItemKind" . kind[0] . " " . kind[1]
 endfor
 " }}}
 " SmiteshP/nvim-navic {{{
 highlight! link NavicText Fg
 highlight! link NavicSeparator Grey
-for kind in g:pastel-sonokai_lsp_kind_color
+for kind in g:ponokai_lsp_kind_color
   execute "highlight! link NavicIcons" . kind[0] . " " . kind[1]
 endfor
 " folke/trouble.nvim {{{
@@ -1089,7 +1089,7 @@ highlight! link TroubleSource Grey
 highlight! link TroubleCode Grey
 " }}}
 " nvim-telescope/telescope.nvim {{{
-call pastel-sonokai#highlight('TelescopeMatching', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('TelescopeMatching', s:palette.green, s:palette.none, 'bold')
 highlight! link TelescopeBorder Grey
 highlight! link TelescopePromptPrefix Blue
 highlight! link TelescopeSelection DiffAdd
@@ -1107,14 +1107,14 @@ highlight! link GitSignsDeleteLn DiffDelete
 highlight! link GitSignsCurrentLineBlame Grey
 " }}}
 " phaazon/hop.nvim {{{
-call pastel-sonokai#highlight('HopNextKey', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('HopNextKey1', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('HopNextKey', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('HopNextKey1', s:palette.blue, s:palette.none, 'bold')
 highlight! link HopNextKey2 Blue
 highlight! link HopUnmatched Grey
 " }}}
 " lukas-reineke/indent-blankline.nvim {{{
-call pastel-sonokai#highlight('IblScope', s:palette.grey, s:palette.none, 'nocombine')
-call pastel-sonokai#highlight('IblIndent', s:palette.bg4, s:palette.none, 'nocombine')
+call ponokai#highlight('IblScope', s:palette.grey, s:palette.none, 'nocombine')
+call ponokai#highlight('IblIndent', s:palette.bg4, s:palette.none, 'nocombine')
 highlight! link IndentBlanklineContextChar IblScope
 highlight! link IndentBlanklineChar IblIndent
 highlight! link IndentBlanklineSpaceChar IndentBlanklineChar
@@ -1130,23 +1130,23 @@ highlight! link rainbowcol6 Purple
 highlight! link rainbowcol7 Green
 " }}}
 " romgrk/barbar.nvim {{{
-call pastel-sonokai#highlight('BufferCurrent', s:palette.fg, s:palette.bg0)
-call pastel-sonokai#highlight('BufferCurrentIndex', s:palette.fg, s:palette.bg0)
-call pastel-sonokai#highlight('BufferCurrentMod', s:palette.blue, s:palette.bg0)
-call pastel-sonokai#highlight('BufferCurrentSign', s:palette.red, s:palette.bg0)
-call pastel-sonokai#highlight('BufferCurrentTarget', s:palette.red, s:palette.bg0, 'bold')
-call pastel-sonokai#highlight('BufferVisible', s:palette.fg, s:palette.bg_dim)
-call pastel-sonokai#highlight('BufferVisibleIndex', s:palette.fg, s:palette.bg_dim)
-call pastel-sonokai#highlight('BufferVisibleMod', s:palette.blue, s:palette.bg_dim)
-call pastel-sonokai#highlight('BufferVisibleSign', s:palette.red, s:palette.bg_dim)
-call pastel-sonokai#highlight('BufferVisibleTarget', s:palette.yellow, s:palette.bg_dim, 'bold')
-call pastel-sonokai#highlight('BufferInactive', s:palette.grey, s:palette.bg_dim)
-call pastel-sonokai#highlight('BufferInactiveIndex', s:palette.grey, s:palette.bg_dim)
-call pastel-sonokai#highlight('BufferInactiveMod', s:palette.grey, s:palette.bg_dim)
-call pastel-sonokai#highlight('BufferInactiveSign', s:palette.grey_dim, s:palette.bg_dim)
-call pastel-sonokai#highlight('BufferInactiveTarget', s:palette.yellow, s:palette.bg_dim, 'bold')
-call pastel-sonokai#highlight('BufferTabpages', s:palette.grey, s:palette.bg_dim, 'bold')
-call pastel-sonokai#highlight('BufferTabpageFill', s:palette.bg_dim, s:palette.bg_dim)
+call ponokai#highlight('BufferCurrent', s:palette.fg, s:palette.bg0)
+call ponokai#highlight('BufferCurrentIndex', s:palette.fg, s:palette.bg0)
+call ponokai#highlight('BufferCurrentMod', s:palette.blue, s:palette.bg0)
+call ponokai#highlight('BufferCurrentSign', s:palette.red, s:palette.bg0)
+call ponokai#highlight('BufferCurrentTarget', s:palette.red, s:palette.bg0, 'bold')
+call ponokai#highlight('BufferVisible', s:palette.fg, s:palette.bg_dim)
+call ponokai#highlight('BufferVisibleIndex', s:palette.fg, s:palette.bg_dim)
+call ponokai#highlight('BufferVisibleMod', s:palette.blue, s:palette.bg_dim)
+call ponokai#highlight('BufferVisibleSign', s:palette.red, s:palette.bg_dim)
+call ponokai#highlight('BufferVisibleTarget', s:palette.yellow, s:palette.bg_dim, 'bold')
+call ponokai#highlight('BufferInactive', s:palette.grey, s:palette.bg_dim)
+call ponokai#highlight('BufferInactiveIndex', s:palette.grey, s:palette.bg_dim)
+call ponokai#highlight('BufferInactiveMod', s:palette.grey, s:palette.bg_dim)
+call ponokai#highlight('BufferInactiveSign', s:palette.grey_dim, s:palette.bg_dim)
+call ponokai#highlight('BufferInactiveTarget', s:palette.yellow, s:palette.bg_dim, 'bold')
+call ponokai#highlight('BufferTabpages', s:palette.grey, s:palette.bg_dim, 'bold')
+call ponokai#highlight('BufferTabpageFill', s:palette.bg_dim, s:palette.bg_dim)
 " }}}
 " rcarriga/nvim-notify {{{
 highlight! link NotifyERRORBorder Red
@@ -1166,8 +1166,8 @@ highlight! link NotifyDEBUGTitle Grey
 highlight! link NotifyTRACETitle Purple
 " }}}
 " rcarriga/nvim-dap-ui {{{
-call pastel-sonokai#highlight('DapUIModifiedValue', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('DapUIBreakpointsCurrentLine', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('DapUIModifiedValue', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('DapUIBreakpointsCurrentLine', s:palette.blue, s:palette.none, 'bold')
 highlight! link DapUIScope Blue
 highlight! link DapUIType Purple
 highlight! link DapUIDecoration Blue
@@ -1183,10 +1183,10 @@ highlight! link DapUIBreakpointsPath Blue
 highlight! link DapUIBreakpointsInfo Green
 " }}}
 " glepnir/lspsaga.nvim {{{
-call pastel-sonokai#highlight('LspFloatWinBorder', s:palette.bg0, s:palette.bg0)
-call pastel-sonokai#highlight('LspSagaDiagnosticHeader', s:palette.orange, s:palette.none, 'bold')
-call pastel-sonokai#highlight('LspSagaCodeActionTitle', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('DefinitionPreviewTitle', s:palette.purple, s:palette.none, 'bold')
+call ponokai#highlight('LspFloatWinBorder', s:palette.bg0, s:palette.bg0)
+call ponokai#highlight('LspSagaDiagnosticHeader', s:palette.orange, s:palette.none, 'bold')
+call ponokai#highlight('LspSagaCodeActionTitle', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('DefinitionPreviewTitle', s:palette.purple, s:palette.none, 'bold')
 highlight! link LspSagaDiagnosticError Red
 highlight! link LspSagaDiagnosticWarn Yellow
 highlight! link LspSagaDiagnosticInfo Blue
@@ -1219,33 +1219,33 @@ highlight! link DefinitionCount Grey
 highlight! link TargetFileName Grey
 " }}}
 " b0o/incline.nvim {{{
-call pastel-sonokai#highlight('InclineNormalNC', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('InclineNormalNC', s:palette.grey, s:palette.bg2)
 " }}}
 " echasnovski/mini.nvim {{{
-call pastel-sonokai#highlight('MiniIndentscopePrefix', s:palette.none, s:palette.none, 'nocombine')
-call pastel-sonokai#highlight('MiniJump2dSpot', s:palette.red, s:palette.none, 'bold,nocombine')
-call pastel-sonokai#highlight('MiniStarterCurrent', s:palette.none, s:palette.none, 'nocombine')
-call pastel-sonokai#highlight('MiniStatuslineDevinfo', s:palette.fg, s:palette.bg3)
-call pastel-sonokai#highlight('MiniStatuslineFileinfo', s:palette.fg, s:palette.bg3)
-call pastel-sonokai#highlight('MiniStatuslineFilename', s:palette.grey, s:palette.bg1)
-call pastel-sonokai#highlight('MiniStatuslineModeInactive', s:palette.grey, s:palette.bg1)
-call pastel-sonokai#highlight('MiniStatuslineModeCommand', s:palette.bg0, s:palette.yellow, 'bold')
-call pastel-sonokai#highlight('MiniStatuslineModeInsert', s:palette.bg0, s:palette.bg_green, 'bold')
-call pastel-sonokai#highlight('MiniStatuslineModeNormal', s:palette.bg0, s:palette.bg_blue, 'bold')
-call pastel-sonokai#highlight('MiniStatuslineModeOther', s:palette.bg0, s:palette.purple, 'bold')
-call pastel-sonokai#highlight('MiniStatuslineModeReplace', s:palette.bg0, s:palette.orange, 'bold')
-call pastel-sonokai#highlight('MiniStatuslineModeVisual', s:palette.bg0, s:palette.bg_red, 'bold')
-call pastel-sonokai#highlight('MiniTablineCurrent', s:palette.fg, s:palette.bg4)
-call pastel-sonokai#highlight('MiniTablineHidden', s:palette.grey, s:palette.bg2)
-call pastel-sonokai#highlight('MiniTablineModifiedCurrent', s:palette.blue, s:palette.bg4)
-call pastel-sonokai#highlight('MiniTablineModifiedHidden', s:palette.grey, s:palette.bg2)
-call pastel-sonokai#highlight('MiniTablineModifiedVisible', s:palette.blue, s:palette.bg2)
-call pastel-sonokai#highlight('MiniTablineTabpagesection', s:palette.bg0, s:palette.blue, 'bold')
-call pastel-sonokai#highlight('MiniTablineVisible', s:palette.fg, s:palette.bg2)
-call pastel-sonokai#highlight('MiniTestEmphasis', s:palette.none, s:palette.none, 'bold')
-call pastel-sonokai#highlight('MiniTestFail', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('MiniTestPass', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('MiniTrailspace', s:palette.none, s:palette.red)
+call ponokai#highlight('MiniIndentscopePrefix', s:palette.none, s:palette.none, 'nocombine')
+call ponokai#highlight('MiniJump2dSpot', s:palette.red, s:palette.none, 'bold,nocombine')
+call ponokai#highlight('MiniStarterCurrent', s:palette.none, s:palette.none, 'nocombine')
+call ponokai#highlight('MiniStatuslineDevinfo', s:palette.fg, s:palette.bg3)
+call ponokai#highlight('MiniStatuslineFileinfo', s:palette.fg, s:palette.bg3)
+call ponokai#highlight('MiniStatuslineFilename', s:palette.grey, s:palette.bg1)
+call ponokai#highlight('MiniStatuslineModeInactive', s:palette.grey, s:palette.bg1)
+call ponokai#highlight('MiniStatuslineModeCommand', s:palette.bg0, s:palette.yellow, 'bold')
+call ponokai#highlight('MiniStatuslineModeInsert', s:palette.bg0, s:palette.bg_green, 'bold')
+call ponokai#highlight('MiniStatuslineModeNormal', s:palette.bg0, s:palette.bg_blue, 'bold')
+call ponokai#highlight('MiniStatuslineModeOther', s:palette.bg0, s:palette.purple, 'bold')
+call ponokai#highlight('MiniStatuslineModeReplace', s:palette.bg0, s:palette.orange, 'bold')
+call ponokai#highlight('MiniStatuslineModeVisual', s:palette.bg0, s:palette.bg_red, 'bold')
+call ponokai#highlight('MiniTablineCurrent', s:palette.fg, s:palette.bg4)
+call ponokai#highlight('MiniTablineHidden', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('MiniTablineModifiedCurrent', s:palette.blue, s:palette.bg4)
+call ponokai#highlight('MiniTablineModifiedHidden', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('MiniTablineModifiedVisible', s:palette.blue, s:palette.bg2)
+call ponokai#highlight('MiniTablineTabpagesection', s:palette.bg0, s:palette.blue, 'bold')
+call ponokai#highlight('MiniTablineVisible', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('MiniTestEmphasis', s:palette.none, s:palette.none, 'bold')
+call ponokai#highlight('MiniTestFail', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('MiniTestPass', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('MiniTrailspace', s:palette.none, s:palette.red)
 highlight! link MiniStarterItemBullet Grey
 highlight! link MiniStarterItemPrefix Yellow
 highlight! link MiniStarterQuery Blue
@@ -1263,11 +1263,11 @@ highlight! link MiniSurround IncSearch
 highlight! link MiniTablineFill TabLineFill
 " }}}
 " ggandor/lightspeed.nvim {{{
-call pastel-sonokai#highlight('LightspeedLabel', s:palette.red, s:palette.none, 'bold,underline')
-call pastel-sonokai#highlight('LightspeedLabelDistant', s:palette.blue, s:palette.none, 'bold,underline')
-call pastel-sonokai#highlight('LightspeedShortcut', s:palette.bg0, s:palette.red, 'bold')
-call pastel-sonokai#highlight('LightspeedUnlabeledMatch', s:palette.fg, s:palette.none, 'bold')
-call pastel-sonokai#highlight('LightspeedPendingOpArea', s:palette.bg0, s:palette.green)
+call ponokai#highlight('LightspeedLabel', s:palette.red, s:palette.none, 'bold,underline')
+call ponokai#highlight('LightspeedLabelDistant', s:palette.blue, s:palette.none, 'bold,underline')
+call ponokai#highlight('LightspeedShortcut', s:palette.bg0, s:palette.red, 'bold')
+call ponokai#highlight('LightspeedUnlabeledMatch', s:palette.fg, s:palette.none, 'bold')
+call ponokai#highlight('LightspeedPendingOpArea', s:palette.bg0, s:palette.green)
 highlight! link LightspeedMaskedChar Purple
 highlight! link LightspeedGreyWash Grey
 " }}}
@@ -1287,27 +1287,27 @@ highlight! link diffIndexLine Purple
 " }}}
 " }}}
 " Generate the `after/syntax` directory based on the comment tags in this file.
-" For example, the content between `syn_begin: sh/zsh` and `syn_end` will be placed in `after/syntax/sh/pastel-sonokai.vim` and `after/syntax/zsh/pastel-sonokai.vim`.
-if pastel-sonokai#syn_exists(s:path) " If the syntax files exist.
+" For example, the content between `syn_begin: sh/zsh` and `syn_end` will be placed in `after/syntax/sh/ponokai.vim` and `after/syntax/zsh/ponokai.vim`.
+if ponokai#syn_exists(s:path) " If the syntax files exist.
   if s:configuration.better_performance
-    if !pastel-sonokai#syn_newest(s:path, s:last_modified) " Regenerate if it's not up to date.
-      call pastel-sonokai#syn_clean(s:path, 0)
-      call pastel-sonokai#syn_gen(s:path, s:last_modified, 'update')
+    if !ponokai#syn_newest(s:path, s:last_modified) " Regenerate if it's not up to date.
+      call ponokai#syn_clean(s:path, 0)
+      call ponokai#syn_gen(s:path, s:last_modified, 'update')
     endif
     finish
   else
-    call pastel-sonokai#syn_clean(s:path, 1)
+    call ponokai#syn_clean(s:path, 1)
   endif
 else
   if s:configuration.better_performance
-    call pastel-sonokai#syn_gen(s:path, s:last_modified, 'generate')
+    call ponokai#syn_gen(s:path, s:last_modified, 'generate')
     finish
   endif
 endif
 " syn_begin: vim-plug {{{
 " https://github.com/junegunn/vim-plug
-call pastel-sonokai#highlight('plug1', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('plugNumber', s:palette.yellow, s:palette.none, 'bold')
+call ponokai#highlight('plug1', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('plugNumber', s:palette.yellow, s:palette.none, 'bold')
 highlight! link plug2 Blue
 highlight! link plugBracket Blue
 highlight! link plugName Green
@@ -1344,7 +1344,7 @@ highlight! link packerTimeLow Green
 " https://github.com/neoclide/coc.nvim
 highlight! link CocTreeOpenClose Purple
 highlight! link CocTreeDescription Grey
-for kind in g:pastel-sonokai_lsp_kind_color
+for kind in g:ponokai_lsp_kind_color
   execute "highlight! link CocSymbol" . kind[0] . " " . kind[1]
 endfor
 " syn_end }}}
@@ -1425,7 +1425,7 @@ highlight! link FocusedSymbol NormalFloat
 " https://github.com/stevearc/aerial.nvim
 highlight! link AerialLine CursorLine
 highlight! link AerialGuide LineNr
-for kind in g:pastel-sonokai_lsp_kind_color
+for kind in g:ponokai_lsp_kind_color
   execute "highlight! link Aerial" . kind[0] . "Icon " . kind[1]
 endfor
 " syn_end }}}
@@ -1454,10 +1454,10 @@ highlight! link DirvishArg Yellow
 " syn_begin: NvimTree {{{
 " https://github.com/kyazdani42/nvim-tree.lua
 if !s:configuration.transparent_background
-  call pastel-sonokai#highlight('NvimTreeNormal', s:palette.fg, s:palette.bg_dim)
-  call pastel-sonokai#highlight('NvimTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
-  call pastel-sonokai#highlight('NvimTreeVertSplit', s:palette.bg0, s:palette.bg0)
-  call pastel-sonokai#highlight('NvimTreeCursorLine', s:palette.none, s:palette.bg0)
+  call ponokai#highlight('NvimTreeNormal', s:palette.fg, s:palette.bg_dim)
+  call ponokai#highlight('NvimTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
+  call ponokai#highlight('NvimTreeVertSplit', s:palette.bg0, s:palette.bg0)
+  call ponokai#highlight('NvimTreeCursorLine', s:palette.none, s:palette.bg0)
 endif
 highlight! link NvimTreeSymlink Fg
 highlight! link NvimTreeFolderName Green
@@ -1498,9 +1498,9 @@ highlight! link FernWindowSelectStatusLine TabLine
 " syn_begin: neo-tree {{{
 " https://github.com/nvim-neo-tree/neo-tree.nvim
 if !s:configuration.transparent_background
-  call pastel-sonokai#highlight('NeoTreeNormal', s:palette.fg, s:palette.bg_dim)
-  call pastel-sonokai#highlight('NeoTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
-  call pastel-sonokai#highlight('NeoTreeVertSplit', s:palette.bg0, s:palette.bg0)
+  call ponokai#highlight('NeoTreeNormal', s:palette.fg, s:palette.bg_dim)
+  call ponokai#highlight('NeoTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
+  call ponokai#highlight('NeoTreeVertSplit', s:palette.bg0, s:palette.bg0)
 endif
 highlight! link NeoTreeDirectoryIcon Blue
 highlight! link NeoTreeGitAdded Green
@@ -1519,19 +1519,19 @@ highlight! link NeoTreeRootName Title
 " syn_end }}}
 " syn_begin: octo {{{
 " https://github.com/pwntester/octo.nvim
-call pastel-sonokai#highlight('OctoViewer', s:palette.bg0, s:palette.blue)
-call pastel-sonokai#highlight('OctoGreenFloat', s:palette.green, s:palette.bg2)
-call pastel-sonokai#highlight('OctoRedFloat', s:palette.red, s:palette.bg2)
-call pastel-sonokai#highlight('OctoPurpleFloat', s:palette.purple, s:palette.bg2)
-call pastel-sonokai#highlight('OctoYellowFloat', s:palette.yellow, s:palette.bg2)
-call pastel-sonokai#highlight('OctoBlueFloat', s:palette.blue, s:palette.bg2)
-call pastel-sonokai#highlight('OctoGreyFloat', s:palette.grey, s:palette.bg2)
-call pastel-sonokai#highlight('OctoBubbleGreen', s:palette.bg0, s:palette.green)
-call pastel-sonokai#highlight('OctoBubbleRed', s:palette.bg0, s:palette.red)
-call pastel-sonokai#highlight('OctoBubblePurple', s:palette.bg0, s:palette.purple)
-call pastel-sonokai#highlight('OctoBubbleYellow', s:palette.bg0, s:palette.yellow)
-call pastel-sonokai#highlight('OctoBubbleBlue', s:palette.bg0, s:palette.blue)
-call pastel-sonokai#highlight('OctoBubbleGrey', s:palette.bg0, s:palette.grey)
+call ponokai#highlight('OctoViewer', s:palette.bg0, s:palette.blue)
+call ponokai#highlight('OctoGreenFloat', s:palette.green, s:palette.bg2)
+call ponokai#highlight('OctoRedFloat', s:palette.red, s:palette.bg2)
+call ponokai#highlight('OctoPurpleFloat', s:palette.purple, s:palette.bg2)
+call ponokai#highlight('OctoYellowFloat', s:palette.yellow, s:palette.bg2)
+call ponokai#highlight('OctoBlueFloat', s:palette.blue, s:palette.bg2)
+call ponokai#highlight('OctoGreyFloat', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('OctoBubbleGreen', s:palette.bg0, s:palette.green)
+call ponokai#highlight('OctoBubbleRed', s:palette.bg0, s:palette.red)
+call ponokai#highlight('OctoBubblePurple', s:palette.bg0, s:palette.purple)
+call ponokai#highlight('OctoBubbleYellow', s:palette.bg0, s:palette.yellow)
+call ponokai#highlight('OctoBubbleBlue', s:palette.bg0, s:palette.blue)
+call ponokai#highlight('OctoBubbleGrey', s:palette.bg0, s:palette.grey)
 highlight! link OctoGreen Green
 highlight! link OctoRed Red
 highlight! link OctoPurple Purple
@@ -1581,7 +1581,7 @@ highlight! link QuickmenuHeader Purple
 " syn_end }}}
 " syn_begin: undotree {{{
 " https://github.com/mbbill/undotree
-call pastel-sonokai#highlight('UndotreeSavedBig', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('UndotreeSavedBig', s:palette.red, s:palette.none, 'bold')
 highlight! link UndotreeNode Blue
 highlight! link UndotreeNodeCurrent Purple
 highlight! link UndotreeSeq Green
@@ -1616,15 +1616,15 @@ highlight! link DashboardFooter Yellow
 " syn_end }}}
 " syn_begin: markdown {{{
 " builtin: {{{
-call pastel-sonokai#highlight('markdownH1', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('markdownH2', s:palette.orange, s:palette.none, 'bold')
-call pastel-sonokai#highlight('markdownH3', s:palette.yellow, s:palette.none, 'bold')
-call pastel-sonokai#highlight('markdownH4', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('markdownH5', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('markdownH6', s:palette.purple, s:palette.none, 'bold')
-call pastel-sonokai#highlight('markdownItalic', s:palette.none, s:palette.none, 'italic')
-call pastel-sonokai#highlight('markdownBold', s:palette.none, s:palette.none, 'bold')
-call pastel-sonokai#highlight('markdownItalicDelimiter', s:palette.grey, s:palette.none, 'italic')
+call ponokai#highlight('markdownH1', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('markdownH2', s:palette.orange, s:palette.none, 'bold')
+call ponokai#highlight('markdownH3', s:palette.yellow, s:palette.none, 'bold')
+call ponokai#highlight('markdownH4', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('markdownH5', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('markdownH6', s:palette.purple, s:palette.none, 'bold')
+call ponokai#highlight('markdownItalic', s:palette.none, s:palette.none, 'italic')
+call ponokai#highlight('markdownBold', s:palette.none, s:palette.none, 'bold')
+call ponokai#highlight('markdownItalicDelimiter', s:palette.grey, s:palette.none, 'italic')
 highlight! link markdownUrl TSURI
 highlight! link markdownCode Green
 highlight! link markdownCodeBlock Green
@@ -1645,9 +1645,9 @@ highlight! link markdownBoldDelimiter Grey
 highlight! link markdownId Yellow
 " }}}
 " vim-markdown: https://github.com/gabrielelana/vim-markdown{{{
-call pastel-sonokai#highlight('mkdURL', s:palette.blue, s:palette.none, 'underline')
-call pastel-sonokai#highlight('mkdInlineURL', s:palette.blue, s:palette.none, 'underline')
-call pastel-sonokai#highlight('mkdItalic', s:palette.grey, s:palette.none, 'italic')
+call ponokai#highlight('mkdURL', s:palette.blue, s:palette.none, 'underline')
+call ponokai#highlight('mkdInlineURL', s:palette.blue, s:palette.none, 'underline')
+call ponokai#highlight('mkdItalic', s:palette.grey, s:palette.none, 'italic')
 highlight! link mkdCodeDelimiter Green
 highlight! link mkdBold Grey
 highlight! link mkdLink Red
@@ -1672,23 +1672,23 @@ if has('nvim-0.8')
   highlight! link @markup.heading.5.marker.markdown @conceal
   highlight! link @markup.heading.6.marker.markdown @conceal
   if !has('nvim-0.10')
-    call pastel-sonokai#highlight('@markup.italic', s:palette.none, s:palette.none, 'italic')
-    call pastel-sonokai#highlight('@markup.strikethrough', s:palette.none, s:palette.none, 'strikethrough')
+    call ponokai#highlight('@markup.italic', s:palette.none, s:palette.none, 'italic')
+    call ponokai#highlight('@markup.strikethrough', s:palette.none, s:palette.none, 'strikethrough')
   endif
 endif
 " }}}
 " syn_end }}}
 " syn_begin: vimwiki {{{
-call pastel-sonokai#highlight('VimwikiHeader1', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('VimwikiHeader2', s:palette.orange, s:palette.none, 'bold')
-call pastel-sonokai#highlight('VimwikiHeader3', s:palette.yellow, s:palette.none, 'bold')
-call pastel-sonokai#highlight('VimwikiHeader4', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('VimwikiHeader5', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('VimwikiHeader6', s:palette.purple, s:palette.none, 'bold')
-call pastel-sonokai#highlight('VimwikiLink', s:palette.blue, s:palette.none, 'underline')
-call pastel-sonokai#highlight('VimwikiItalic', s:palette.none, s:palette.none, 'italic')
-call pastel-sonokai#highlight('VimwikiBold', s:palette.none, s:palette.none, 'bold')
-call pastel-sonokai#highlight('VimwikiUnderline', s:palette.none, s:palette.none, 'underline')
+call ponokai#highlight('VimwikiHeader1', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('VimwikiHeader2', s:palette.orange, s:palette.none, 'bold')
+call ponokai#highlight('VimwikiHeader3', s:palette.yellow, s:palette.none, 'bold')
+call ponokai#highlight('VimwikiHeader4', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('VimwikiHeader5', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('VimwikiHeader6', s:palette.purple, s:palette.none, 'bold')
+call ponokai#highlight('VimwikiLink', s:palette.blue, s:palette.none, 'underline')
+call ponokai#highlight('VimwikiItalic', s:palette.none, s:palette.none, 'italic')
+call ponokai#highlight('VimwikiBold', s:palette.none, s:palette.none, 'bold')
+call ponokai#highlight('VimwikiUnderline', s:palette.none, s:palette.none, 'underline')
 highlight! link VimwikiList Red
 highlight! link VimwikiTag Blue
 highlight! link VimwikiCode Green
@@ -1701,11 +1701,11 @@ highlight! link VimwikiNoExistsLink Red
 " syn_end }}}
 " syn_begin: rst {{{
 " builtin: https://github.com/marshallward/vim-restructuredtext{{{
-call pastel-sonokai#highlight('rstStandaloneHyperlink', s:palette.purple, s:palette.none, 'underline')
-call pastel-sonokai#highlight('rstEmphasis', s:palette.none, s:palette.none, 'italic')
-call pastel-sonokai#highlight('rstStrongEmphasis', s:palette.none, s:palette.none, 'bold')
-call pastel-sonokai#highlight('rstStandaloneHyperlink', s:palette.blue, s:palette.none, 'underline')
-call pastel-sonokai#highlight('rstHyperlinkTarget', s:palette.blue, s:palette.none, 'underline')
+call ponokai#highlight('rstStandaloneHyperlink', s:palette.purple, s:palette.none, 'underline')
+call ponokai#highlight('rstEmphasis', s:palette.none, s:palette.none, 'italic')
+call ponokai#highlight('rstStrongEmphasis', s:palette.none, s:palette.none, 'bold')
+call ponokai#highlight('rstStandaloneHyperlink', s:palette.blue, s:palette.none, 'underline')
+call ponokai#highlight('rstHyperlinkTarget', s:palette.blue, s:palette.none, 'underline')
 highlight! link rstSubstitutionReference Blue
 highlight! link rstInterpretedTextOrHyperlinkReference Green
 highlight! link rstTableLines Grey
@@ -1744,20 +1744,20 @@ highlight! link texEnvArgName Green
 " syn_end }}}
 " syn_begin: html/markdown/javascriptreact/typescriptreact {{{
 " builtin: https://notabug.org/jorgesumle/vim-html-syntax{{{
-call pastel-sonokai#highlight('htmlH1', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('htmlH2', s:palette.orange, s:palette.none, 'bold')
-call pastel-sonokai#highlight('htmlH3', s:palette.yellow, s:palette.none, 'bold')
-call pastel-sonokai#highlight('htmlH4', s:palette.green, s:palette.none, 'bold')
-call pastel-sonokai#highlight('htmlH5', s:palette.blue, s:palette.none, 'bold')
-call pastel-sonokai#highlight('htmlH6', s:palette.purple, s:palette.none, 'bold')
-call pastel-sonokai#highlight('htmlLink', s:palette.none, s:palette.none, 'underline')
-call pastel-sonokai#highlight('htmlBold', s:palette.none, s:palette.none, 'bold')
-call pastel-sonokai#highlight('htmlBoldUnderline', s:palette.none, s:palette.none, 'bold,underline')
-call pastel-sonokai#highlight('htmlBoldItalic', s:palette.none, s:palette.none, 'bold,italic')
-call pastel-sonokai#highlight('htmlBoldUnderlineItalic', s:palette.none, s:palette.none, 'bold,underline,italic')
-call pastel-sonokai#highlight('htmlUnderline', s:palette.none, s:palette.none, 'underline')
-call pastel-sonokai#highlight('htmlUnderlineItalic', s:palette.none, s:palette.none, 'underline,italic')
-call pastel-sonokai#highlight('htmlItalic', s:palette.none, s:palette.none, 'italic')
+call ponokai#highlight('htmlH1', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('htmlH2', s:palette.orange, s:palette.none, 'bold')
+call ponokai#highlight('htmlH3', s:palette.yellow, s:palette.none, 'bold')
+call ponokai#highlight('htmlH4', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('htmlH5', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('htmlH6', s:palette.purple, s:palette.none, 'bold')
+call ponokai#highlight('htmlLink', s:palette.none, s:palette.none, 'underline')
+call ponokai#highlight('htmlBold', s:palette.none, s:palette.none, 'bold')
+call ponokai#highlight('htmlBoldUnderline', s:palette.none, s:palette.none, 'bold,underline')
+call ponokai#highlight('htmlBoldItalic', s:palette.none, s:palette.none, 'bold,italic')
+call ponokai#highlight('htmlBoldUnderlineItalic', s:palette.none, s:palette.none, 'bold,underline,italic')
+call ponokai#highlight('htmlUnderline', s:palette.none, s:palette.none, 'underline')
+call ponokai#highlight('htmlUnderlineItalic', s:palette.none, s:palette.none, 'underline,italic')
+call ponokai#highlight('htmlItalic', s:palette.none, s:palette.none, 'italic')
 highlight! link htmlTag Green
 highlight! link htmlEndTag Blue
 highlight! link htmlTagN RedItalic
@@ -2309,7 +2309,7 @@ highlight! link pythonCoding Grey
 highlight! link pythonDot Grey
 " }}}
 " semshi: https://github.com/numirias/semshi{{{
-call pastel-sonokai#highlight('semshiUnresolved', s:palette.orange, s:palette.none, 'undercurl')
+call ponokai#highlight('semshiUnresolved', s:palette.orange, s:palette.none, 'undercurl')
 highlight! link semshiImported TSInclude
 highlight! link semshiParameter TSParameter
 highlight! link semshiParameterUnused Grey
@@ -2630,7 +2630,7 @@ highlight! link ps1BuiltIn BlueItalic
 " }}}
 " syn_end }}}
 " syn_begin: vim {{{
-call pastel-sonokai#highlight('vimCommentTitle', s:palette.grey, s:palette.none, 'bold')
+call ponokai#highlight('vimCommentTitle', s:palette.grey, s:palette.none, 'bold')
 highlight! link vimLet Red
 highlight! link vimFunction Green
 highlight! link vimIsCommand Fg
@@ -2777,7 +2777,7 @@ highlight! link yamlConstant BlueItalic
 highlight! link yamlString Green
 " syn_end }}}
 " syn_begin: toml {{{
-call pastel-sonokai#highlight('tomlTable', s:palette.purple, s:palette.none, 'bold')
+call ponokai#highlight('tomlTable', s:palette.purple, s:palette.none, 'bold')
 highlight! link tomlKey Red
 highlight! link tomlBoolean Blue
 highlight! link tomlString Green
@@ -2801,17 +2801,17 @@ endif
 " }}}
 " syn_end }}}
 " syn_begin: dosini {{{
-call pastel-sonokai#highlight('dosiniHeader', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('dosiniHeader', s:palette.red, s:palette.none, 'bold')
 highlight! link dosiniLabel Blue
 highlight! link dosiniValue Green
 highlight! link dosiniNumber Green
 " syn_end }}}
 " syn_begin: help {{{
-call pastel-sonokai#highlight('helpNote', s:palette.purple, s:palette.none, 'bold')
-call pastel-sonokai#highlight('helpHeadline', s:palette.red, s:palette.none, 'bold')
-call pastel-sonokai#highlight('helpHeader', s:palette.orange, s:palette.none, 'bold')
-call pastel-sonokai#highlight('helpURL', s:palette.green, s:palette.none, 'underline')
-call pastel-sonokai#highlight('helpHyperTextEntry', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('helpNote', s:palette.purple, s:palette.none, 'bold')
+call ponokai#highlight('helpHeadline', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('helpHeader', s:palette.orange, s:palette.none, 'bold')
+call ponokai#highlight('helpURL', s:palette.green, s:palette.none, 'underline')
+call ponokai#highlight('helpHyperTextEntry', s:palette.blue, s:palette.none, 'bold')
 highlight! link helpHyperTextJump Blue
 highlight! link helpCommand Yellow
 highlight! link helpExample Green

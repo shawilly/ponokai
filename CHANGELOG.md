@@ -25,21 +25,21 @@ All notable changes to this project will be documented in this file.
 - New tree-sitter tokens.
 - Support for shading.
 - Optimize `nvim-neo-tree/neo-tree.nvim`.
-- Add `g:pastel-sonokai_dim_inactive_windows`.
+- Add `g:ponokai_dim_inactive_windows`.
 
 ## [0.3.2] - 2022-05-26
 
 ### Added
 
-- Add `g:pastel-sonokai_spell_foreground`.
+- Add `g:ponokai_spell_foreground`.
 - Optimize `junegunn/limelight.vim`.
 - Generate `/after/syntax`.
 - Add FAQ for configuration options.
 - Optimize `rhysd/clever-f.vim`.
 - Optimize `rcarriga/nvim-dap-ui`.
-- Add `g:pastel-sonokai_disable_terminal_colors`.
+- Add `g:ponokai_disable_terminal_colors`.
 - Optimize `voldikss/vim-floaterm`.
-- Support `g:pastel-sonokai_transparent_background == 2`.
+- Support `g:ponokai_transparent_background == 2`.
 - Optimize `stevearc/aerial.nvim`.
 - Optimize `wbthomason/packer.nvim`.
 
@@ -55,7 +55,7 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 
-- Remove alacritty theme from this repo. [`a05e702`](https://github.com/shawilly/pastel-sonokai/commit/a05e70254c63e5f5a896081932868f97765e36ac)
+- Remove alacritty theme from this repo. [`a05e702`](https://github.com/shawilly/ponokai/commit/a05e70254c63e5f5a896081932868f97765e36ac)
 - Remove examples of configuration options in help doc.
 
 ## [0.3.1] - 2022-01-09
@@ -89,16 +89,16 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Optimize `lervag/vimtex`.
-- Add `g:pastel-sonokai_diagnostic_text_highlight`
+- Add `g:ponokai_diagnostic_text_highlight`
 - Optimize `liuchengxu/vim-clap`.
 - Add whitelist for extended file types.
 - Support for leaderf popup mode.
 - Optimize `nvim-telescope/telescope.nvim`.
-- Add `g:pastel-sonokai_diagnostic_virtual_text`.
+- Add `g:ponokai_diagnostic_virtual_text`.
 - Optimize `kyazdani42/nvim-tree.lua`.
 - Add installation guide for using pack feature.
 - Add `espresso` variant.
-- Add `g:pastel-sonokai_show_eob`.
+- Add `g:ponokai_show_eob`.
 - Optimize `McSinyx/vim-octave`.
 - Support semantic highlight in coc.nvim .
 - Optimize semantic highlight in some plugins.
@@ -114,7 +114,7 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 
-- Remove `g:pastel-sonokai_sign_column_background`.
+- Remove `g:ponokai_sign_column_background`.
 
 ## [0.2.1] - 2020-12-29
 
@@ -178,12 +178,12 @@ All notable changes to this project will be documented in this file.
 
 - Basically finished.
 
-[unreleased]: https://github.com/shawilly/pastel-sonokai/compare/v0.3.3...HEAD
-[0.3.3]: https://github.com/shawilly/pastel-sonokai/compare/v0.3.2...v0.3.3
-[0.3.2]: https://github.com/shawilly/pastel-sonokai/compare/v0.3.1...v0.3.2
-[0.3.1]: https://github.com/shawilly/pastel-sonokai/compare/v0.3.0...v0.3.1
-[0.3.0]: https://github.com/shawilly/pastel-sonokai/compare/v0.2.1...v0.3.0
-[0.2.1]: https://github.com/shawilly/pastel-sonokai/compare/v0.2.0...v0.2.1
-[0.2.0]: https://github.com/shawilly/pastel-sonokai/compare/v0.1.1...v0.2.0
-[0.1.1]: https://github.com/shawilly/pastel-sonokai/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/shawilly/pastel-sonokai/releases/tag/v0.1.0
+[unreleased]: https://github.com/shawilly/ponokai/compare/v0.3.3...HEAD
+[0.3.3]: https://github.com/shawilly/ponokai/compare/v0.3.2...v0.3.3
+[0.3.2]: https://github.com/shawilly/ponokai/compare/v0.3.1...v0.3.2
+[0.3.1]: https://github.com/shawilly/ponokai/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/shawilly/ponokai/compare/v0.2.1...v0.3.0
+[0.2.1]: https://github.com/shawilly/ponokai/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/shawilly/ponokai/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/shawilly/ponokai/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/shawilly/ponokai/releases/tag/v0.1.0
