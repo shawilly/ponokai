@@ -1,5 +1,5 @@
-*sonokai.txt* High Contrast & Vivid Color Scheme based on Monokai Pro
-*sonokai*
+*pastel-sonokai.txt* High Contrast & Vivid Color Scheme based on Monokai Pro
+*pastel-sonokai*
 >
                  _____                   __         _
                 / ___/____  ____  ____  / /______ _(_)
@@ -9,18 +9,18 @@
 <
 
 ==============================================================================
-CONTENTS                                     *sonokai-contents*
+CONTENTS                                     *pastel-sonokai-contents*
 
-Introduction                                 |sonokai-introduction|
-Installation                                 |sonokai-installation|
-Usage                                        |sonokai-usage|
-Configuration                                |sonokai-configuration|
-FAQ                                          |sonokai-faq|
+Introduction                                 |pastel-sonokai-introduction|
+Installation                                 |pastel-sonokai-installation|
+Usage                                        |pastel-sonokai-usage|
+Configuration                                |pastel-sonokai-configuration|
+FAQ                                          |pastel-sonokai-faq|
 
 Note: Type |gO| in neovim to show the outline of contents.
 
 ==============================================================================
-INTRODUCTION                                              *sonokai-introduction*
+INTRODUCTION                                              *pastel-sonokai-introduction*
 
 Sometimes I need a high contrast color scheme, and I think monokai is one of
 the best solutions, it's very beautiful and vivid.
@@ -47,7 +47,7 @@ Features~
 - Italic support 🎉
 
 ==============================================================================
-INSTALLATION                                              *sonokai-installation*
+INSTALLATION                                              *pastel-sonokai-installation*
 
 ------------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ Via Plugin Manager~
 
     Take [vim-plug](https://github.com/junegunn/vim-plug) for example:
 >
-        Plug 'sainnhe/sonokai'
+        Plug 'shawilly/pastel-pastel-sonokai'
 <
     For better syntax highlighting support, please install
     https://github.com/sheerun/vim-polyglot or https://github.com/nvim-treesitter/nvim-treesitter.
@@ -66,39 +66,39 @@ Via Pack Feature~
 
     1. Create a new directory: `$ mkdir -p ~/.vim/pack/colors/opt`
 
-    2. Clone this repository: `$ git clone --depth 1 https://github.com/sainnhe/sonokai.git ~/.vim/pack/colors/opt/sonokai`
+    2. Clone this repository: `$ git clone --depth 1 https://github.com/shawilly/pastel-pastel-sonokai.git ~/.vim/pack/colors/opt/pastel-sonokai`
 
-    3. Generate help tags: `:helptags ~/.vim/pack/colors/opt/sonokai/doc/`
+    3. Generate help tags: `:helptags ~/.vim/pack/colors/opt/pastel-sonokai/doc/`
 
-    4. Add `packadd! sonokai` to your vimrc.
+    4. Add `packadd! pastel-sonokai` to your vimrc.
 
-Note: If you install this color scheme to `pack/*/start`, you still need to add `packadd! sonokai` to your vimrc. [sainnhe/gruvbox-material#60](https://github.com/sainnhe/gruvbox-material/issues/60)
+Note: If you install this color scheme to `pack/*/start`, you still need to add `packadd! pastel-sonokai` to your vimrc. [sainnhe/gruvbox-material#60](https://github.com/sainnhe/gruvbox-material/issues/60)
 
 ------------------------------------------------------------------------------
 
 Manually~
 
-    1. Clone the repository: `git clone --depth 1 https://github.com/sainnhe/sonokai.git`
+    1. Clone the repository: `git clone --depth 1 https://github.com/shawilly/pastel-pastel-sonokai.git`
 
-    2. Copy `/path/to/sonokai/autoload/sonokai.vim` to
+    2. Copy `/path/to/pastel-sonokai/autoload/pastel-sonokai.vim` to
     `~/.vim/autoload/` .
 
-    3. Copy `/path/to/sonokai/colors/sonokai.vim` to
+    3. Copy `/path/to/pastel-sonokai/colors/pastel-sonokai.vim` to
     `~/.vim/colors/` .
 
-    4. Copy `/path/to/sonokai/doc/sonokai.txt` to
+    4. Copy `/path/to/pastel-sonokai/doc/pastel-sonokai.txt` to
     `~/.vim/doc/` and execute `:helptags ~/.vim/doc/` to generate help tags.
 
     5. To install [airline](https://github.com/vim-airline/vim-airline) theme,
-    copy `/path/to/sonokai/autoload/airline/themes/sonokai.vim`
+    copy `/path/to/pastel-sonokai/autoload/airline/themes/pastel-sonokai.vim`
     to `~/.vim/autoload/airline/themes/` .
 
     6. To install [lightline](https://github.com/itchyny/lightline.vim) theme,
-    copy `/path/to/sonokai/autoload/lightline/colorscheme/sonokai.vim`
+    copy `/path/to/pastel-sonokai/autoload/lightline/colorscheme/pastel-sonokai.vim`
     to `~/.vim/autoload/lightline/colorscheme/` .
 
     7. To install [lualine](https://github.com/nvim-lualine/lualine.nvim) theme,
-    copy `/path/to/sonokai/lua/lualine/themes/sonokai.lua`
+    copy `/path/to/pastel-sonokai/lua/lualine/themes/pastel-sonokai.lua`
     to `~/.config/nvim/lua/lualine/themes/` .
 
 ------------------------------------------------------------------------------
@@ -107,11 +107,11 @@ AUR~
 
     There are some packages available for Arch Linux users in AUR:
 
-    - [vim-sonokai-git](https://aur.archlinux.org/pkgbase/vim-sonokai-git/)
-    - [neovim-sonokai-git](https://aur.archlinux.org/pkgbase/neovim-sonokai-git/)
+    - [vim-pastel-sonokai-git](https://aur.archlinux.org/pkgbase/vim-pastel-sonokai-git/)
+    - [neovim-pastel-sonokai-git](https://aur.archlinux.org/pkgbase/neovim-pastel-sonokai-git/)
 
 ==============================================================================
-USAGE                                                            *sonokai-usage*
+USAGE                                                            *pastel-sonokai-usage*
 
 ------------------------------------------------------------------------------
 
@@ -124,18 +124,18 @@ Vim~
           set termguicolors
         endif
 
-        " The configuration options should be placed before `colorscheme sonokai`.
-        let g:sonokai_style = 'andromeda'
-        let g:sonokai_better_performance = 1
+        " The configuration options should be placed before `colorscheme pastel-sonokai`.
+        let g:pastel-sonokai_style = 'andromeda'
+        let g:pastel-sonokai_better_performance = 1
 
-        colorscheme sonokai
+        colorscheme pastel-sonokai
 <
-    See |sonokai-configuration| for more configuration options.
+    See |pastel-sonokai-configuration| for more configuration options.
 
     If you want to apply this color scheme temporarily, run this command in
     vim(this may cause broken colors):
 >
-        :colorscheme sonokai
+        :colorscheme pastel-sonokai
 <
 ------------------------------------------------------------------------------
 
@@ -144,11 +144,11 @@ Airline~
     To enable [airline](https://github.com/vim-airline/vim-airline) color
     scheme, put this in your vimrc:
 >
-        let g:airline_theme = 'sonokai'
+        let g:airline_theme = 'pastel-sonokai'
 <
     To apply it without reloading:
 >
-        :AirlineTheme sonokai
+        :AirlineTheme pastel-sonokai
 <
 ------------------------------------------------------------------------------
 
@@ -158,14 +158,14 @@ Lightline~
     scheme, put this in your vimrc:
 >
         let g:lightline = {}
-        let g:lightline.colorscheme = 'sonokai'
+        let g:lightline.colorscheme = 'pastel-sonokai'
 
         " Or this line:
-        let g:lightline = {'colorscheme' : 'sonokai'}
+        let g:lightline = {'colorscheme' : 'pastel-sonokai'}
 <
     To apply it without reloading:
 >
-        :let g:lightline.colorscheme = 'sonokai'
+        :let g:lightline.colorscheme = 'pastel-sonokai'
         :call lightline#init()
         :call lightline#colorscheme()
 <
@@ -178,18 +178,18 @@ Lualine~
 >
         require'lualine'.setup {
           options = {
-            theme = 'sonokai'
+            theme = 'pastel-sonokai'
           }
         }
 <
     To apply it without reloading:
 >
-        :lua require'lualine'.setup {options = {theme = 'sonokai'}}
+        :lua require'lualine'.setup {options = {theme = 'pastel-sonokai'}}
 <
 ==============================================================================
-CONFIGURATION                                            *sonokai-configuration*
+CONFIGURATION                                            *pastel-sonokai-configuration*
 
-Note: the configuration options should be placed before `colorscheme sonokai`
+Note: the configuration options should be placed before `colorscheme pastel-sonokai`
 
 E.g.
 >
@@ -197,15 +197,15 @@ E.g.
       set termguicolors
     endif
 
-    let g:sonokai_style = 'andromeda'
-    let g:sonokai_better_performance = 1
+    let g:pastel-sonokai_style = 'andromeda'
+    let g:pastel-sonokai_better_performance = 1
 
-    colorscheme sonokai
-    let g:lightline = {'colorscheme' : 'sonokai'}
+    colorscheme pastel-sonokai
+    let g:lightline = {'colorscheme' : 'pastel-sonokai'}
 <
 ------------------------------------------------------------------------------
-                                                               *g:sonokai_style*
-g:sonokai_style~
+                                                               *g:pastel-sonokai_style*
+g:pastel-sonokai_style~
 
 The style of this color scheme.
 
@@ -215,8 +215,8 @@ The style of this color scheme.
     Default value:      `'default'`
 
 ------------------------------------------------------------------------------
-                                              *g:sonokai_disable_italic_comment*
-g:sonokai_disable_italic_comment~
+                                              *g:pastel-sonokai_disable_italic_comment*
+g:pastel-sonokai_disable_italic_comment~
 
 By default, italic is enabled in `Comment`. To disable italic in `Comment`, set
 this option to `1`.
@@ -226,8 +226,8 @@ this option to `1`.
     Default value:      `0`
 
 ------------------------------------------------------------------------------
-                                                       *g:sonokai_enable_italic*
-g:sonokai_enable_italic~
+                                                       *g:pastel-sonokai_enable_italic*
+g:pastel-sonokai_enable_italic~
 
 To enable italic in this color scheme, set this option to `1`.
 
@@ -236,11 +236,11 @@ To enable italic in this color scheme, set this option to `1`.
     Default value:      `0`
 
 Note: This option is designed to use with fonts that support cursive italics.
-See |sonokai-faq| for more information.
+See |pastel-sonokai-faq| for more information.
 
 ------------------------------------------------------------------------------
-                                                              *g:sonokai_cursor*
-g:sonokai_cursor~
+                                                              *g:pastel-sonokai_cursor*
+g:pastel-sonokai_cursor~
 
 Customize the cursor color, only works in GUI clients.
 
@@ -250,8 +250,8 @@ Customize the cursor color, only works in GUI clients.
     Default value:      `'auto'`
 
 ------------------------------------------------------------------------------
-                                              *g:sonokai_transparent_background*
-g:sonokai_transparent_background~
+                                              *g:pastel-sonokai_transparent_background*
+g:pastel-sonokai_transparent_background~
 
 To use transparent background, set this option to `1`.
 
@@ -263,12 +263,12 @@ background), set this option to `2`.
     Default value:      `0`
 
 ------------------------------------------------------------------------------
-                                                *g:sonokai_dim_inactive_windows*
-g:sonokai_dim_inactive_windows~
+                                                *g:pastel-sonokai_dim_inactive_windows*
+g:pastel-sonokai_dim_inactive_windows~
 
 Dim inactive windows. Only works in Neovim currently.
 
-When this option is used in conjunction with |g:sonokai_show_eob| set to 0,
+When this option is used in conjunction with |g:pastel-sonokai_show_eob| set to 0,
 the end of the buffer will only be hidden inside the active window. Inside
 inactive windows, the end of buffer filler characters will be visible in
 dimmed symbols. This is due to the way Vim and Neovim handle |hl-EndOfBuffer|.
@@ -278,8 +278,8 @@ dimmed symbols. This is due to the way Vim and Neovim handle |hl-EndOfBuffer|.
     Default value:      `0`
 
 ------------------------------------------------------------------------------
-                                           *g:sonokai_menu_selection_background*
-g:sonokai_menu_selection_background~
+                                           *g:pastel-sonokai_menu_selection_background*
+g:pastel-sonokai_menu_selection_background~
 
 Customize the background color of |hl-PmenuSel| and |hl-WildMenu|.
 
@@ -288,8 +288,8 @@ Customize the background color of |hl-PmenuSel| and |hl-WildMenu|.
     Default value:      `'blue'`
 
 ------------------------------------------------------------------------------
-                                                    *g:sonokai_spell_foreground*
-g:sonokai_spell_foreground~
+                                                    *g:pastel-sonokai_spell_foreground*
+g:pastel-sonokai_spell_foreground~
 
 By default, this color scheme won't color the foreground of |spell|, instead
 colored under curls will be used. If you also want to color the foreground,
@@ -300,8 +300,8 @@ set this option to `'colored'`.
     Default value:      `'none'`
 
 ------------------------------------------------------------------------------
-                                                            *g:sonokai_show_eob*
-g:sonokai_show_eob~
+                                                            *g:pastel-sonokai_show_eob*
+g:pastel-sonokai_show_eob~
 
 Whether to show |hl-EndOfBuffer|.
 
@@ -310,8 +310,8 @@ Whether to show |hl-EndOfBuffer|.
     Default value:      `1`
 
 ------------------------------------------------------------------------------
-                                                         *g:sonokai_float_style*
-g:sonokai_float_style~
+                                                         *g:pastel-sonokai_float_style*
+g:pastel-sonokai_float_style~
 
 Style used to make floating windows stand out from other windows. `'bright'`
 makes the background of these windows lighter than |hl-Normal|, whereas
@@ -326,8 +326,8 @@ installers, etc.
     Default value:      `'bright'`
 
 ------------------------------------------------------------------------------
-                                           *g:sonokai_diagnostic_text_highlight*
-g:sonokai_diagnostic_text_highlight~
+                                           *g:pastel-sonokai_diagnostic_text_highlight*
+g:pastel-sonokai_diagnostic_text_highlight~
 
 Some plugins support highlighting error/warning/info/hint texts, by default
 these texts are only underlined, but you can use this option to also highlight
@@ -348,8 +348,8 @@ Currently, the following plugins are supported:
 - https://github.com/vim-syntastic/syntastic
 
 ------------------------------------------------------------------------------
-                                           *g:sonokai_diagnostic_line_highlight*
-g:sonokai_diagnostic_line_highlight~
+                                           *g:pastel-sonokai_diagnostic_line_highlight*
+g:pastel-sonokai_diagnostic_line_highlight~
 
 Some plugins support highlighting error/warning/info/hint lines, but this
 feature is disabled by default in this color scheme. To enable this feature,
@@ -367,8 +367,8 @@ Currently, the following plugins are supported:
 - https://github.com/vim-syntastic/syntastic
 
 ------------------------------------------------------------------------------
-                                             *g:sonokai_diagnostic_virtual_text*
-g:sonokai_diagnostic_virtual_text~
+                                             *g:pastel-sonokai_diagnostic_virtual_text*
+g:pastel-sonokai_diagnostic_virtual_text~
 
 Some plugins can use the virtual text feature of Neovim to display
 error/warning/info/hint information. You can use this option to adjust the
@@ -388,8 +388,8 @@ Currently, the following plugins are supported:
 - https://github.com/ycm-core/YouCompleteMe
 
 ------------------------------------------------------------------------------
-                                                        *g:sonokai_current_word*
-g:sonokai_current_word~
+                                                        *g:pastel-sonokai_current_word*
+g:pastel-sonokai_current_word~
 
 Some plugins can highlight the word under current cursor, you can use this
 option to control their behavior.
@@ -408,8 +408,8 @@ Currently, the following plugins are supported:
 - https://github.com/prabirshrestha/vim-lsp
 
 ------------------------------------------------------------------------------
-                                             *g:sonokai_disable_terminal_colors*
-g:sonokai_disable_terminal_colors~
+                                             *g:pastel-sonokai_disable_terminal_colors*
+g:pastel-sonokai_disable_terminal_colors~
 
 Setting this option to `1` will disable terminal colors provided by this color
 scheme so you can remain terminal colors the same when using |:terminal| in
@@ -420,8 +420,8 @@ vim and outside of vim.
     Default value:      `0`
 
 ------------------------------------------------------------------------------
-                                              *g:sonokai_lightline_disable_bold*
-g:sonokai_lightline_disable_bold~
+                                              *g:pastel-sonokai_lightline_disable_bold*
+g:pastel-sonokai_lightline_disable_bold~
 
 By default, bold is enabled in lightline color scheme. To disable bold in
 lightline color scheme, set this option to `1`.
@@ -430,11 +430,11 @@ lightline color scheme, set this option to `1`.
     Available values:   `0`, `1`
     Default value:      `0`
 
-Note: this configuration option doesn't need to be placed before `colorscheme sonokai`
+Note: this configuration option doesn't need to be placed before `colorscheme pastel-sonokai`
 
 ------------------------------------------------------------------------------
-                                                  *g:sonokai_better_performance*
-g:sonokai_better_performance~
+                                                  *g:pastel-sonokai_better_performance*
+g:pastel-sonokai_better_performance~
 
 The loading time of this color scheme is very long because too many file types
 and plugins are optimized. This feature allows you to load part of the code on
@@ -447,22 +447,22 @@ Enabling this option will reduce loading time by approximately 50%.
     Default value:      `0`
 
 ------------------------------------------------------------------------------
-                                                     *g:sonokai_colors_override*
-g:sonokai_colors_override~
+                                                     *g:pastel-sonokai_colors_override*
+g:pastel-sonokai_colors_override~
 
 Override color palette. The available keys can be found in
-`/path/to/sonokai/autoload/sonokai.vim`.
+`/path/to/pastel-sonokai/autoload/pastel-sonokai.vim`.
 
 E.g.
 >
-    let g:sonokai_colors_override = {'bg0': ['#1e222a', '235'], 'bg2': ['#282c34', '236']}
-    colorscheme sonokai
+    let g:pastel-sonokai_colors_override = {'bg0': ['#1e222a', '235'], 'bg2': ['#282c34', '236']}
+    colorscheme pastel-sonokai
 <
     Type:               |Dictionary|
     Default value:      `{}`
 
 ==============================================================================
-FAQ                                                                *sonokai-faq*
+FAQ                                                                *pastel-sonokai-faq*
 
 ------------------------------------------------------------------------------
 
@@ -483,13 +483,13 @@ tmux, as tmux cannot display true colors properly:
 
 The configuration options don't work.~
 
-You should place them before `colorscheme sonokai` .
+You should place them before `colorscheme pastel-sonokai` .
 
 ------------------------------------------------------------------------------
 
 A lot of errors are detected if I install with pack feature.~
 
-You'll need to add `packadd! sonokai` before applying this color scheme.
+You'll need to add `packadd! pastel-sonokai` before applying this color scheme.
 Check [sainnhe/gruvbox-material#60](https://github.com/sainnhe/gruvbox-material/issues/60)
 
 ------------------------------------------------------------------------------
@@ -498,9 +498,9 @@ How to enable cursive italic keywords?~
 
 1. Install a font that supports cursive italics, for example https://aka.sainnhe.dev/fonts
 
-2. Enable italic keywords in this color scheme: `let g:sonokai_enable_italic = 1`
+2. Enable italic keywords in this color scheme: `let g:pastel-sonokai_enable_italic = 1`
 
-3. (Optional) Disable italic comment: `let g:sonokai_disable_italic_comment = 1`
+3. (Optional) Disable italic comment: `let g:pastel-sonokai_disable_italic_comment = 1`
 
 ------------------------------------------------------------------------------
 
@@ -510,7 +510,7 @@ Some terminal emulators don't support italics, which may cause the comment
 color looks weird. See https://github.com/sainnhe/gruvbox-material/issues/5#issuecomment-729586348
 
 A temporary solution is to disable italic comments via
-|g:sonokai_disable_italic_comment|.
+|g:pastel-sonokai_disable_italic_comment|.
 
 If you are using tmux, you may also need to override default true colors of
 tmux: https://github.com/tmux/tmux/issues/1246
@@ -519,42 +519,42 @@ tmux: https://github.com/tmux/tmux/issues/1246
 
 How to use custom colors?~
 >
-    function! s:sonokai_custom() abort
+    function! s:pastel-sonokai_custom() abort
       " Link a highlight group to a predefined highlight group.
-      " See `colors/sonokai.vim` for all predefined highlight groups.
+      " See `colors/pastel-sonokai.vim` for all predefined highlight groups.
       highlight! link groupA groupB
       highlight! link groupC groupD
 
       " Initialize the color palette.
-      " The first parameter is a valid value for `g:sonokai_style`,
-      " and the second parameter is a valid value for `g:sonokai_colors_override`.
-      let l:palette = sonokai#get_palette('atlantis', {})
+      " The first parameter is a valid value for `g:pastel-sonokai_style`,
+      " and the second parameter is a valid value for `g:pastel-sonokai_colors_override`.
+      let l:palette = pastel-sonokai#get_palette('atlantis', {})
       " Define a highlight group.
       " The first parameter is the name of a highlight group,
       " the second parameter is the foreground color,
       " the third parameter is the background color,
       " the fourth parameter is for UI highlighting which is optional,
       " and the last parameter is for `guisp` which is also optional.
-      " See `autoload/sonokai.vim` for the format of `l:palette`.
-      call sonokai#highlight('groupE', l:palette.red, l:palette.none, 'undercurl', l:palette.red)
+      " See `autoload/pastel-sonokai.vim` for the format of `l:palette`.
+      call pastel-sonokai#highlight('groupE', l:palette.red, l:palette.none, 'undercurl', l:palette.red)
     endfunction
 
-    augroup SonokaiCustom
+    augroup pastel-sonokaiCustom
       autocmd!
-      autocmd ColorScheme sonokai call s:sonokai_custom()
+      autocmd ColorScheme pastel-sonokai call s:pastel-sonokai_custom()
     augroup END
 
-    colorscheme sonokai
+    colorscheme pastel-sonokai
 <
 Or in Neovim (Lua configuration):
 >
     vim.api.nvim_create_autocmd('ColorScheme', {
-      group = vim.api.nvim_create_augroup('custom_highlights_sonokai', {}),
-      pattern = 'sonokai',
+      group = vim.api.nvim_create_augroup('custom_highlights_pastel-sonokai', {}),
+      pattern = 'pastel-sonokai',
       callback = function()
-        local config = vim.fn['sonokai#get_configuration']()
-        local palette = vim.fn['sonokai#get_palette'](config.style, config.colors_override)
-        local set_hl = vim.fn['sonokai#highlight']
+        local config = vim.fn['pastel-sonokai#get_configuration']()
+        local palette = vim.fn['pastel-sonokai#get_palette'](config.style, config.colors_override)
+        local set_hl = vim.fn['pastel-sonokai#highlight']
 
         set_hl('Search', palette.none, palette.diff_green)
         set_hl('IncSearch', palette.none, palette.diff_red)

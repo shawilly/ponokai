@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Update the `s:last_modified` in `colors/sonokai.vim` automatically.
+# Update the `s:last_modified` in `colors/pastel-sonokai.vim` automatically.
 
 BBLUE='\033[1;34m'
 GREEN='\033[0;32m'
@@ -11,12 +11,12 @@ DATE=$(date -u)
 git stash -q --keep-index
 
 # Edit the file if it's staged.
-if test "$(git diff --cached --name-only | grep 'colors/sonokai.vim')"x != ""x
+if test "$(git diff --cached --name-only | grep 'colors/pastel-sonokai.vim')"x != ""x
 then
   # Use `sed -i.bak` instead of `sed -i` for compatibility with Mac OS and Free BSD.
-  sed -i.bak "s/^let\ s:last_modified.*\$/let s:last_modified = '${DATE}'/" colors/sonokai.vim
-  rm colors/sonokai.vim.bak
-  printf "${BBLUE}The last modified time field has been updated in colors/sonokai.vim\n${GREEN}let s:last_modified = '${DATE}'${NC}\n\n"
+  sed -i.bak "s/^let\ s:last_modified.*\$/let s:last_modified = '${DATE}'/" colors/pastel-sonokai.vim
+  rm colors/pastel-sonokai.vim.bak
+  printf "${BBLUE}The last modified time field has been updated in colors/pastel-sonokai.vim\n${GREEN}let s:last_modified = '${DATE}'${NC}\n\n"
 fi
 
 # Stage updated files

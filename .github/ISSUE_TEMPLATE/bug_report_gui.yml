@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        _Before reporting:_ search [existing issues](https://github.com/sainnhe/sonokai/issues?q=is%3Aissue+is%3Aopen+label%3Abug) and check the FAQ in the help doc. Any bug report which doesn't follow the issue template and I can't reproduce will be closed.
+        _Before reporting:_ search [existing issues](https://github.com/shawilly/pastel-pastel-sonokai/issues?q=is%3Aissue+is%3Aopen+label%3Abug) and check the FAQ in the help doc. Any bug report which doesn't follow the issue template and I can't reproduce will be closed.
 
   - type: checkboxes
     attributes:
@@ -46,11 +46,11 @@ body:
       placeholder: |
         ```vim
         call plug#begin(fnamemodify(stdpath('data'), ':p') . 'plugins')
-        Plug 'sainnhe/sonokai'
+        Plug 'shawilly/pastel-pastel-sonokai'
         call plug#end()
 
         set termguicolors
-        colorscheme sonokai
+        colorscheme pastel-sonokai
         ```
     validations:
       required: true

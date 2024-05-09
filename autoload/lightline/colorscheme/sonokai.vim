@@ -1,14 +1,14 @@
 " =============================================================================
-" URL: https://github.com/sainnhe/sonokai/
-" Filename: autoload/lightline/colorscheme/sonokai.vim
+" URL: https://github.com/shawilly/pastel-pastel-sonokai/
+" Filename: autoload/lightline/colorscheme/pastel-sonokai.vim
 " Author: Sainnhepark
 " Email: i@sainnhe.dev
 " License: MIT License
 " =============================================================================
 
 " Initialization: {{{
-let s:configuration = sonokai#get_configuration()
-let s:palette = sonokai#get_palette(s:configuration.style, s:configuration.colors_override)
+let s:configuration = pastel-sonokai#get_configuration()
+let s:palette = pastel-sonokai#get_palette(s:configuration.style, s:configuration.colors_override)
 if s:configuration.transparent_background == 2
   let s:palette.bg1 = s:palette.none
 endif
@@ -161,7 +161,7 @@ if s:configuration.lightline_disable_bold
   let s:p.tabline.tabsel = [ [ s:tab_sel_fg, s:tab_sel_bg ] ]
 endif
 
-let g:lightline#colorscheme#sonokai#palette = lightline#colorscheme#flatten(s:p)
+let g:lightline#colorscheme#pastel-sonokai#palette = lightline#colorscheme#flatten(s:p)
 "}}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker fmr={{{,}}}:
