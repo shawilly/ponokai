@@ -31,13 +31,13 @@ endfunction "}}}
 function! ponokai#get_palette(style, colors_override) "{{{
   if a:style ==# 'default'
     let palette = {
-          \ 'black':      ['#9a9a9b',   '245'],
-          \ 'bg_dim':     ['#9d9da1',   '246'],
-          \ 'bg0':        ['#a3a3a9',   '247'],
-          \ 'bg1':        ['#a6a6ad',   '247'],
-          \ 'bg2':        ['#a9a9b1',   '248'],
-          \ 'bg3':        ['#aeaeb6',   '248'],
-          \ 'bg4':        ['#b4b4bc',   '249'],
+          \ 'black':      ['#1f1e1c',   '232'],
+          \ 'bg_dim':     ['#242120',   '232'],
+          \ 'bg0':        ['#312c2b',   '235'],
+          \ 'bg1':        ['#393230',   '236'],
+          \ 'bg2':        ['#413937',   '236'],
+          \ 'bg3':        ['#423f46',   '237'],
+          \ 'bg4':        ['#49464e',   '237'],
           \ 'bg_red':     ['#ffb3bd',   '217'],
           \ 'diff_red':   ['#a67f82',   '181'],
           \ 'bg_green':   ['#cbecb0',   '193'],
