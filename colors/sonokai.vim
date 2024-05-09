@@ -2,7 +2,7 @@
 " Name:         pastel-sonokai
 " Description:  High Contrast & Vivid Color Scheme based on Monokai Pro
 " Author:       Sainnhepark <i@sainnhe.dev>
-" Website:      https://github.com/shawilly/pastel-pastel-sonokai/
+" Website:      https://github.com/shawilly/pastel-sonokai/
 " License:      MIT
 " -----------------------------------------------------------------------------
 

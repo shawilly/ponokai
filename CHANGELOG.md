@@ -55,7 +55,7 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 
-- Remove alacritty theme from this repo. [`a05e702`](https://github.com/shawilly/pastel-pastel-sonokai/commit/a05e70254c63e5f5a896081932868f97765e36ac)
+- Remove alacritty theme from this repo. [`a05e702`](https://github.com/shawilly/pastel-sonokai/commit/a05e70254c63e5f5a896081932868f97765e36ac)
 - Remove examples of configuration options in help doc.
 
 ## [0.3.1] - 2022-01-09
@@ -178,12 +178,12 @@ All notable changes to this project will be documented in this file.
 
 - Basically finished.
 
-[unreleased]: https://github.com/shawilly/pastel-pastel-sonokai/compare/v0.3.3...HEAD
-[0.3.3]: https://github.com/shawilly/pastel-pastel-sonokai/compare/v0.3.2...v0.3.3
-[0.3.2]: https://github.com/shawilly/pastel-pastel-sonokai/compare/v0.3.1...v0.3.2
-[0.3.1]: https://github.com/shawilly/pastel-pastel-sonokai/compare/v0.3.0...v0.3.1
-[0.3.0]: https://github.com/shawilly/pastel-pastel-sonokai/compare/v0.2.1...v0.3.0
-[0.2.1]: https://github.com/shawilly/pastel-pastel-sonokai/compare/v0.2.0...v0.2.1
-[0.2.0]: https://github.com/shawilly/pastel-pastel-sonokai/compare/v0.1.1...v0.2.0
-[0.1.1]: https://github.com/shawilly/pastel-pastel-sonokai/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/shawilly/pastel-pastel-sonokai/releases/tag/v0.1.0
+[unreleased]: https://github.com/shawilly/pastel-sonokai/compare/v0.3.3...HEAD
+[0.3.3]: https://github.com/shawilly/pastel-sonokai/compare/v0.3.2...v0.3.3
+[0.3.2]: https://github.com/shawilly/pastel-sonokai/compare/v0.3.1...v0.3.2
+[0.3.1]: https://github.com/shawilly/pastel-sonokai/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/shawilly/pastel-sonokai/compare/v0.2.1...v0.3.0
+[0.2.1]: https://github.com/shawilly/pastel-sonokai/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/shawilly/pastel-sonokai/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/shawilly/pastel-sonokai/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/shawilly/pastel-sonokai/releases/tag/v0.1.0

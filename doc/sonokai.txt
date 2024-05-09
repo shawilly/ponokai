@@ -55,7 +55,7 @@ Via Plugin Manager~
 
     Take [vim-plug](https://github.com/junegunn/vim-plug) for example:
 >
-        Plug 'shawilly/pastel-pastel-sonokai'
+        Plug 'shawilly/pastel-sonokai'
 <
     For better syntax highlighting support, please install
     https://github.com/sheerun/vim-polyglot or https://github.com/nvim-treesitter/nvim-treesitter.
@@ -66,7 +66,7 @@ Via Pack Feature~
 
     1. Create a new directory: `$ mkdir -p ~/.vim/pack/colors/opt`
 
-    2. Clone this repository: `$ git clone --depth 1 https://github.com/shawilly/pastel-pastel-sonokai.git ~/.vim/pack/colors/opt/pastel-sonokai`
+    2. Clone this repository: `$ git clone --depth 1 https://github.com/shawilly/pastel-sonokai.git ~/.vim/pack/colors/opt/pastel-sonokai`
 
     3. Generate help tags: `:helptags ~/.vim/pack/colors/opt/pastel-sonokai/doc/`
 
@@ -78,7 +78,7 @@ Note: If you install this color scheme to `pack/*/start`, you still need to add 
 
 Manually~
 
-    1. Clone the repository: `git clone --depth 1 https://github.com/shawilly/pastel-pastel-sonokai.git`
+    1. Clone the repository: `git clone --depth 1 https://github.com/shawilly/pastel-sonokai.git`
 
     2. Copy `/path/to/pastel-sonokai/autoload/pastel-sonokai.vim` to
     `~/.vim/autoload/` .

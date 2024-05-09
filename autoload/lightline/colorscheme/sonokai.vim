@@ -1,5 +1,5 @@
 " =============================================================================
-" URL: https://github.com/shawilly/pastel-pastel-sonokai/
+" URL: https://github.com/shawilly/pastel-sonokai/
 " Filename: autoload/lightline/colorscheme/pastel-sonokai.vim
 " Author: Sainnhepark
 " Email: i@sainnhe.dev

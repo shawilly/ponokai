@@ -1,5 +1,5 @@
 -- =============================================================================
--- URL: https://github.com/shawilly/pastel-pastel-sonokai
+-- URL: https://github.com/shawilly/pastel-sonokai
 -- Filename: lua/lualine/themes/pastel-sonokai.lua
 -- Author: sainnhe
 -- Email: i@sainnhe.dev

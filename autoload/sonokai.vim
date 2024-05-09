@@ -1,5 +1,5 @@
 " =============================================================================
-" URL: https://github.com/shawilly/pastel-pastel-sonokai
+" URL: https://github.com/shawilly/pastel-sonokai
 " Filename: autoload/pastel-sonokai.vim
 " Author: sainnhe
 " Email: i@sainnhe.dev

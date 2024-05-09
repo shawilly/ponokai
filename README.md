@@ -60,11 +60,11 @@ The `shusia`, `maia` and `espresso` variants are basically modified versions of 
 
 ## Documentation
 
-See [`:help pastel-sonokai.txt`](https://github.com/shawilly/pastel-pastel-sonokai/blob/master/doc/pastel-sonokai.txt)
+See [`:help pastel-sonokai.txt`](https://github.com/shawilly/pastel-sonokai/blob/master/doc/pastel-sonokai.txt)
 
 ## Related Projects
 
-See this [wiki page](https://github.com/shawilly/pastel-pastel-sonokai/wiki/Related-Projects).
+See this [wiki page](https://github.com/shawilly/pastel-sonokai/wiki/Related-Projects).
 
 ## Contributing
 
