@@ -1453,12 +1453,12 @@ highlight! link DirvishArg Yellow
 " syn_end }}}
 " syn_begin: NvimTree {{{
 " https://github.com/kyazdani42/nvim-tree.lua
-" if !s:configuration.transparent_background
-"   call ponokai#highlight('NvimTreeNormal', s:palette.fg, s:palette.bg_dim)
-"   call ponokai#highlight('NvimTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
-"   call ponokai#highlight('NvimTreeVertSplit', s:palette.bg0, s:palette.bg0)
-"   call ponokai#highlight('NvimTreeCursorLine', s:palette.none, s:palette.bg0)
-" endif
+if !s:configuration.transparent_background
+  call ponokai#highlight('NvimTreeNormal', s:palette.fg, s:palette.bg_dim)
+  call ponokai#highlight('NvimTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
+  call ponokai#highlight('NvimTreeVertSplit', s:palette.bg0, s:palette.bg0)
+  call ponokai#highlight('NvimTreeCursorLine', s:palette.none, s:palette.bg0)
+endif
 highlight! link NvimTreeSymlink Fg
 highlight! link NvimTreeFolderName Green
 highlight! link NvimTreeRootFolder Grey
@@ -1497,11 +1497,11 @@ highlight! link FernWindowSelectStatusLine TabLine
 " syn_end }}}
 " syn_begin: neo-tree {{{
 " https://github.com/nvim-neo-tree/neo-tree.nvim
-" if !s:configuration.transparent_background
-"   call ponokai#highlight('NeoTreeNormal', s:palette.fg, s:palette.bg_dim)
-"   call ponokai#highlight('NeoTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
-"   call ponokai#highlight('NeoTreeVertSplit', s:palette.bg0, s:palette.bg0)
-" endif
+if !s:configuration.transparent_background
+  call ponokai#highlight('NeoTreeNormal', s:palette.fg, s:palette.bg_dim)
+  call ponokai#highlight('NeoTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
+  call ponokai#highlight('NeoTreeVertSplit', s:palette.bg0, s:palette.bg0)
+endif
 highlight! link NeoTreeDirectoryIcon Blue
 highlight! link NeoTreeGitAdded Green
 highlight! link NeoTreeGitConflict Yellow
