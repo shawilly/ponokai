@@ -29,7 +29,7 @@ Ponokai is a direct fork of Sonokai, maintaining all its features and continuing
 Dive into the details with our [documentation](https://github.com/shawilly/ponokai/blob/master/doc/ponokai.txt).
 
 ### 🤝 Contributing
-Got ideas? Join the evolution of Ponokai. Check out our [contributing guide](https://www.sainnhe.dev/post/contributing-guide/).
+Got ideas? You can follow the original sonokai [contributing guide](https://www.sainnhe.dev/post/contributing-guide/).
 
 ### 💡 Inspirations
 Ponokai is inspired by:
