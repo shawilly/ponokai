@@ -110,6 +110,33 @@ function! ponokai#get_palette(style, colors_override) "{{{
           \ 'grey_dim':   ['#8d91af',   '246'],
           \ 'none':       ['NONE',      'NONE']
           \ }
+  elseif a:style ==# 'kitty'
+    let palette = {
+          \ 'black':      ['#141020',   '232'],
+          \ 'bg_dim':     ['#1A1823',   '232'],
+          \ 'bg0':        ['#1E1D2F',   '235'],   
+          \ 'bg1':        ['#2d3648',   '236'],  
+          \ 'bg2':        ['#2F2D42',   '236'], 
+          \ 'bg3':        ['#575268',   '237'],
+          \ 'bg4':        ['#6E6C7E',   '237'],
+          \ 'bg_red':     ['#998BA2',   '217'],
+          \ 'diff_red':   ['#a67f82',   '181'],
+          \ 'bg_green':   ['#a5be00',   '193'],
+          \ 'diff_green': ['#ABE9B2',   '245'],
+          \ 'bg_blue':    ['#89DCEB',   '153'],
+          \ 'diff_blue':  ['#97CCFB',   '247'],
+          \ 'diff_yellow':['#ffc300',   '250'],
+          \ 'fg':         ['#f2f2f3',   '254'],
+          \ 'red':        ['#F18FAD',   '217'],
+          \ 'orange':     ['#F8BD96',   '216'],
+          \ 'yellow':     ['#FAE3B0',   '230'],
+          \ 'green':      ['#b5e48c',   '193'],
+          \ 'blue':       ['#a8daff',   '152'],
+          \ 'purple':     ['#DDB5F2',   '183'],
+          \ 'grey':       ['#b4b6cf',   '250'],
+          \ 'grey_dim':   ['#8d91af',   '246'],
+          \ 'none':       ['NONE',      'NONE']
+          \ }
   endif
   return extend(palette, a:colors_override)
 endfunction "}}}
