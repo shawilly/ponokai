@@ -86,8 +86,8 @@ function! ponokai#get_palette(style, colors_override) "{{{
   elseif a:style ==# 'wacky'
     let palette = {
           \ 'black':      ['#000814',   '232'],
-          \ 'bg_dim':     ['#001d3d',   '232'],
-          \ 'bg0':        ['#003566',   '235'],   
+          \ 'bg_dim':     ['#101020',   '232'],
+          \ 'bg0':        ['#1E1E2E',   '235'],   
           \ 'bg1':        ['#2d3648',   '236'],  
           \ 'bg2':        ['#303a5e',   '236'], 
           \ 'bg3':        ['#334063',   '237'],
