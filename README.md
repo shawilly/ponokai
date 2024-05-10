@@ -1,5 +1,5 @@
 <h2 align="center">
-  🌈 Ponokai Theme 🌈
+  🌊 Ponokai Theme 🌊
 </h2>
 
 <p align="center">
