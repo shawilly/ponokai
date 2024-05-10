@@ -15,6 +15,22 @@ Inspired by the classic [Monokai](https://monokai.pro/vscode) theme and seeking 
 
 Ponokai is a direct fork of Sonokai, maintaining all its features and continuing to evolve with fresh, pastel-inspired tweaks for the color aficionado.
 
+### Installation
+
+[lazy.nvim](https://github.com/folke/lazy.nvim) (recommended)
+``` lua
+{
+	"shawilly/ponokai",
+	priority = 1000,
+	config = function() 
+		vim.g.ponokai_enable_italic = "1"
+		vim.g.ponokai_style = "default"
+		vim.cmd.colorscheme("ponokai")
+    -- Enable transparent background with vim.g.ponokai_transparent_background = "1"
+	end,
+}
+```
+
 ### 🌟 Features
 - **Perfect Contrast:** High enough to pop, soft enough to relax.
 - **Vivid, Pastel Colors:** A palette that's easy on the eyes.
