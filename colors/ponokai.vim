@@ -28,7 +28,7 @@ endif
 " }}}
 " Common Highlight Groups: {{{
 " UI: {{{
-if s:configuration.transparent_background >= 1
+if s:configuration.transparent_background < 1
   call ponokai#highlight('Normal', s:palette.fg, s:palette.none)
   call ponokai#highlight('NormalNC', s:palette.fg, s:palette.none)
   call ponokai#highlight('Terminal', s:palette.fg, s:palette.none)
