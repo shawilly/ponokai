@@ -111,10 +111,7 @@ Manually~
 
 AUR~
 
-    There are some packages available for Arch Linux users in AUR:
-
-    - [vim-ponokai-git](https://aur.archlinux.org/pkgbase/vim-ponokai-git/)
-    - [neovim-ponokai-git](https://aur.archlinux.org/pkgbase/neovim-ponokai-git/)
+    Coming soon...
 
 ==============================================================================
 USAGE                                                            *ponokai-usage*
