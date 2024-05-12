@@ -58,13 +58,13 @@ function! ponokai#get_palette(style, colors_override) "{{{
           \ }
   elseif a:style ==# 'plum'
     let palette = {
-          \ 'black':      ['#2b0a3a',   '236'],
-          \ 'bg_dim':     ['#4e266d',   '133'],
-          \ 'bg0':        ['#5a327e',    '98'],
-          \ 'bg1':        ['#6e4a9c',    '60'],
-          \ 'bg2':        ['#7e5ebd',    '99'],
-          \ 'bg3':        ['#8f72de',   '141'],
-          \ 'bg4':        ['#a08bff',   '141'],
+          \ 'black':      ['#190028',   '232'],
+          \ 'bg_dim':     ['#220135',   '236'],
+          \ 'bg0':        ['#32004f',   '133'],
+          \ 'bg1':        ['#3a015c',    '98'],
+          \ 'bg2':        ['#3a015c',    '60'],
+          \ 'bg3':        ['#524175',    '99'],
+          \ 'bg4':        ['#4b4474',   '141'],
           \ 'bg_red':     ['#ffb3bd',   '217'],
           \ 'diff_red':   ['#a67f82',   '181'],
           \ 'bg_green':   ['#cbecb0',   '193'],
@@ -78,7 +78,7 @@ function! ponokai#get_palette(style, colors_override) "{{{
           \ 'yellow':     ['#fdfd96',   '230'],
           \ 'green':      ['#c9f0aa',   '193'],
           \ 'blue':       ['#a8daff',   '152'],
-          \ 'purple':     ['#d4c5fa',   '183'],
+          \ 'purple':     ['#a08BFF',   '183'],
           \ 'grey':       ['#c4c6cf',   '250'],
           \ 'grey_dim':   ['#9da1af',   '246'],
           \ 'none':       ['NONE',      'NONE']
