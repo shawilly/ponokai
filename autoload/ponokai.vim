@@ -56,7 +56,7 @@ function! ponokai#get_palette(style, colors_override) "{{{
           \ 'grey_dim':   ['#9da1af',   '246'],
           \ 'none':       ['NONE',      'NONE']
           \ }
-  if a:style ==# 'plum'
+  elseif a:style ==# 'plum'
     let palette = {
           \ 'black':      ['#2b0a3a',   '236'],
           \ 'bg_dim':     ['#4e266d',   '133'],
