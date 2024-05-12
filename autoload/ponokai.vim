@@ -60,7 +60,7 @@ function! ponokai#get_palette(style, colors_override) "{{{
     let palette = {
           \ 'black':      ['#180a1c',   '232'],
           \ 'bg_dim':     ['#250630',   '232'],
-          \ 'bg0':        ['#2b1d3a',   '235'],
+          \ 'bg0':        ['#2b223a',   '235'],
           \ 'bg1':        ['#331648',   '236'],
           \ 'bg2':        ['#361a4e',   '236'],
           \ 'bg3':        ['#391e53',   '237'],
