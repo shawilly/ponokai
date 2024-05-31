@@ -51,7 +51,7 @@ function! ponokai#get_palette(style, colors_override) "{{{
           \ 'yellow':     ['#f8e7b0',   '230'],
           \ 'green':      ['#b4e49a',   '193'],
           \ 'blue':       ['#98d4e7',   '152'],
-          \ 'purple':     ['#d4c5fa',   '183'],
+          \ 'purple':     ['#bdb2ff',   '185'],
           \ 'grey':       ['#c4c6cf',   '250'],
           \ 'grey_dim':   ['#9da1af',   '246'],
           \ 'none':       ['NONE',      'NONE']
