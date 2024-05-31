@@ -1,8 +1,8 @@
 " =============================================================================
 " URL: https://github.com/shawilly/ponokai/
 " Filename: autoload/airline/themes/ponokai.vim
-" Author: Sainnhepark
-" Email: i@sainnhe.dev
+" Author: Shane Williams
+" Email: shane@shawilly.dev
 " License: MIT License
 " =============================================================================
 

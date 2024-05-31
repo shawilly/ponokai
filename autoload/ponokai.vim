@@ -1,7 +1,7 @@
 " =============================================================================
 " URL: https://github.com/shawilly/ponokai
 " Filename: autoload/ponokai.vim
-" Author: shawilly
+" Author: Shane Williams
 " Email: shane@shawilly.dev
 " License: MIT License
 " =============================================================================

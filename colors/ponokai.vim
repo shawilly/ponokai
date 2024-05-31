@@ -1,7 +1,7 @@
 " -----------------------------------------------------------------------------
 " Name:         ponokai
 " Description:  High Contrast & Vivid Color Scheme based on Monokai Pro
-" Author:       Sainnhepark <i@sainnhe.dev>
+" Author:       Shane Williams <shane@shawilly.dev>
 " Website:      https://github.com/shawilly/ponokai/
 " License:      MIT
 " -----------------------------------------------------------------------------
