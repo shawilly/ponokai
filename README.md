@@ -12,9 +12,16 @@
 
 <hr/>
 
-<p align="center">
-  <img src="https://github.com/shawilly/ponokai/assets/89072538/311e3738-2a5b-4b24-8ac6-bcca5ceae25b" alt="Ponokai Theme Preview">
-</p>
+``` vim
+vim.g.ponokai_style = "default"
+```
+<img width="1510" alt="Screenshot 2024-05-31 at 21 07 13" src="https://github.com/shawilly/ponokai/assets/89072538/dae8047c-92f7-464b-ae86-19392dfcf72f">
+<hr/>
+
+``` vim
+vim.g.ponokai_style = "kitty"
+```
+<img width="1473" alt="Screenshot 2024-05-31 at 19 59 50" src="https://github.com/shawilly/ponokai/assets/89072538/461d6755-9f65-46cd-8982-97d2c96f4436">
 
 <h3 align="center">🌊 ⚠️ more styles coming soon ⚠️ 🌊</h3>
 
@@ -36,7 +43,7 @@ Ponokai is a direct fork of Sonokai, maintaining all its features and continuing
 	priority = 1000,
 	config = function() 
 		vim.g.ponokai_enable_italic = "1"
-		vim.g.ponokai_style = "default"
+		vim.g.ponokai_style = "default" -- or "kitty"
 		vim.cmd.colorscheme("ponokai")
     -- Enable transparent background with vim.g.ponokai_transparent_background = "1"
 	end,
