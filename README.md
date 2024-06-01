@@ -200,6 +200,8 @@ Apply without reloading:
 :lua require'lualine'.setup {options = {theme = 'ponokai'}}
 ```
 
+---
+
 ## Configuration
 
 | Option                            | Description                                          | Type       | Values                                              | Default   |
@@ -228,6 +230,8 @@ Apply without reloading:
 |                                   | colorscheme ponokai                                  |            |                                                     |           |
 |                                   | ```                                                  |            |                                                     |           |
 
+&nbsp;&nbsp;&nbsp;&nbsp;
+
 > [!TIP]
 > ### Example
 ```vim
@@ -241,6 +245,8 @@ let g:ponokai_better_performance = 1
 colorscheme ponokai
 let g:lightline = {'colorscheme' : 'ponokai'}
 ```
+
+---
 
 ## FAQ
 
@@ -265,6 +271,7 @@ Add `packadd! ponokai` before applying the color scheme.
     ```vim
     let g:ponokai_enable_italic = 
 
+---
 
 ### 💡 Inspirations
 Ponokai is inspired by:
