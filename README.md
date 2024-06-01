@@ -12,7 +12,9 @@
 	</a>
 	<br>
 </div>
+
 &nbsp;&nbsp;&nbsp;&nbsp;
+
 <p align="center">
   <img src="https://github.com/shawilly/ponokai/assets/89072538/14404312-f047-484a-a9c7-a4f82775c60d" height="40" />
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -36,7 +38,10 @@ vim.g.ponokai_style = "kitty"
 ```
 <img width="1473" alt="Screenshot 2024-05-31 at 19 59 50" src="https://github.com/shawilly/ponokai/assets/89072538/461d6755-9f65-46cd-8982-97d2c96f4436">
 
-<h3 align="center">🌊 ⚠️ more styles coming soon ⚠️ 🌊</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+> [!WARNING]
+> <h3 align="center">🌊 ⚠️ more styles coming soon ⚠️ 🌊</h3>
 
 ---
 
@@ -84,7 +89,8 @@ Ponokai is a direct fork of Sonokai, maintaining all its features and continuing
       end
     }
 ```
-<b>EXAMPLE</b>
+> [!TIP]
+> <b>EXAMPLE</b>
 ``` lua
 {
 	"shawilly/ponokai",
@@ -196,7 +202,34 @@ Apply without reloading:
 
 ## Configuration
 
-### Example
+| Option                            | Description                                          | Type       | Values                                              | Default   |
+|-----------------------------------|------------------------------------------------------|------------|-----------------------------------------------------|-----------|
+| `g:ponokai_style`                 | Set the style of this color scheme.                  | `String`   | `'default'`, `'kitty'`, `'vampire'`                 | `'default'`|
+| `g:ponokai_disable_italic_comment`| Disable italic in comments.                          | `Number`   | `0`, `1`                                            | `0`       |
+| `g:ponokai_enable_italic`         | Enable italic in this color scheme.                  | `Number`   | `0`, `1`                                            | `0`       |
+| `g:ponokai_cursor`                | Customize the cursor color (GUI clients only).       | `String`   | `'auto'`, `'red'`, `'orange'`, `'yellow'`, `'green'`, `'blue'`, `'purple'` | `'auto'` |
+| `g:ponokai_transparent_background`| Use a transparent background.                        | `Number`   | `0`, `1`, `2`                                       | `0`       |
+| `g:ponokai_dim_inactive_windows`  | Dim inactive windows (Neovim only).                  | `Number`   | `0`, `1`                                            | `0`       |
+| `g:ponokai_menu_selection_background` | Customize the background color of `PmenuSel` and `WildMenu`. | `String`   | `'blue'`, `'green'`, `'red'`                        | `'blue'`  |
+| `g:ponokai_spell_foreground`      | Color the foreground of spell.                       | `String`   | `'none'`, `'colored'`                               | `'none'`  |
+| `g:ponokai_show_eob`              | Show `EndOfBuffer`.                                  | `Number`   | `1`, `0`                                            | `1`       |
+| `g:ponokai_float_style`           | Style for floating windows.                          | `String`   | `'bright'`, `'dim'`                                 | `'bright'`|
+| `g:ponokai_diagnostic_text_highlight` | Highlight background of error/warning/info/hint texts. | `Number`   | `0`, `1`                                            | `0`       |
+| `g:ponokai_diagnostic_line_highlight` | Highlight lines for error/warning/info/hint.          | `Number`   | `0`, `1`                                            | `0`       |
+| `g:ponokai_diagnostic_virtual_text` | Adjust virtual text highlighting for error/warning/info/hint. | `String`   | `'grey'`, `'colored'`, `'highlighted'`              | `'grey'`  |
+| `g:ponokai_current_word`          | Control behavior of the word under the current cursor. | `String`   | `'grey background'`, `'bold'`, `'underline'`, `'italic'` | `'grey background'` (non-transparent), `'bold'` (transparent) |
+| `g:ponokai_disable_terminal_colors` | Disable terminal colors provided by this color scheme. | `Number`   | `0`, `1`                                            | `0`       |
+| `g:ponokai_lightline_disable_bold`| Disable bold in the lightline color scheme.          | `Number`   | `0`, `1`                                            | `0`       |
+| `g:ponokai_better_performance`    | Reduce loading time by loading part of the code on demand. | `Number`   | `0`, `1`                                            | `0`       |
+| `g:ponokai_colors_override`       | Override the color palette.                          | `Dictionary`| -                                                  | `{}`      |
+|                                   | Example:                                             |            | -                                                   | -         |
+|                                   | ```                                                  |            |                                                     |           |
+|                                   | let g:ponokai_colors_override = {'bg0': ['#1e222a', '235'], 'bg2': ['#282c34', '236']} |            |                                                     |           |
+|                                   | colorscheme ponokai                                  |            |                                                     |           |
+|                                   | ```                                                  |            |                                                     |           |
+
+> [!TIP]
+> ### Example
 ```vim
 if has('termguicolors')
   set termguicolors
@@ -207,121 +240,6 @@ let g:ponokai_better_performance = 1
 
 colorscheme ponokai
 let g:lightline = {'colorscheme' : 'ponokai'}
-```
-
-### Options
-
-#### g:ponokai_style
-Set the style of this color scheme.
-- Type: `String`
-- Values: `'default'`, `'kitty'`, `'vampire'`
-- Default: `'default'`
-
-#### g:ponokai_disable_italic_comment
-Disable italic in `Comment`.
-- Type: `Number`
-- Values: `0`, `1`
-- Default: `0`
-
-#### g:ponokai_enable_italic
-Enable italic in this color scheme.
-- Type: `Number`
-- Values: `0`, `1`
-- Default: `0`
-
-#### g:ponokai_cursor
-Customize the cursor color (GUI clients only).
-- Type: `String`
-- Values: `'auto'`, `'red'`, `'orange'`, `'yellow'`, `'green'`, `'blue'`, `'purple'`
-- Default: `'auto'`
-
-#### g:ponokai_transparent_background
-Use transparent background.
-- Type: `Number`
-- Values: `0`, `1`, `2`
-- Default: `0`
-
-#### g:ponokai_dim_inactive_windows
-Dim inactive windows (Neovim only).
-- Type: `Number`
-- Values: `0`, `1`
-- Default: `0`
-
-#### g:ponokai_menu_selection_background
-Customize the background color of `PmenuSel` and `WildMenu`.
-- Type: `String`
-- Values: `'blue'`, `'green'`, `'red'`
-- Default: `'blue'`
-
-#### g:ponokai_spell_foreground
-Color the foreground of spell.
-- Type: `String`
-- Values: `'none'`, `'colored'`
-- Default: `'none'`
-
-#### g:ponokai_show_eob
-Show `EndOfBuffer`.
-- Type: `Number`
-- Values: `1`, `0`
-- Default: `1`
-
-#### g:ponokai_float_style
-Style for floating windows.
-- Type: `String`
-- Values: `'bright'`, `'dim'`
-- Default: `'bright'`
-
-#### g:ponokai_diagnostic_text_highlight
-Highlight background of error/warning/info/hint texts.
-- Type: `Number`
-- Values: `0`, `1`
-- Default: `0`
-
-#### g:ponokai_diagnostic_line_highlight
-Highlight lines for error/warning/info/hint.
-- Type: `Number`
-- Values: `0`, `1`
-- Default: `0`
-
-#### g:ponokai_diagnostic_virtual_text
-Adjust virtual text highlighting for error/warning/info/hint.
-- Type: `String`
-- Values: `'grey'`, `'colored'`, `'highlighted'`
-- Default: `'grey'`
-
-#### g:ponokai_current_word
-Control behavior of word under current cursor.
-- Type: `String`
-- Values: `'grey background'`, `'bold'`, `'underline'`, `'italic'`
-- Default: `'grey background'` (non-transparent), `'bold'` (transparent)
-
-#### g:ponokai_disable_terminal_colors
-Disable terminal colors provided by this color scheme.
-- Type: `Number`
-- Values: `0`, `1`
-- Default: `0`
-
-#### g:ponokai_lightline_disable_bold
-Disable bold in lightline color scheme.
-- Type: `Number`
-- Values: `0`, `1`
-- Default: `0`
-
-#### g:ponokai_better_performance
-Reduce loading time by loading part of the code on demand.
-- Type: `Number`
-- Values: `0`, `1`
-- Default: `0`
-
-#### g:ponokai_colors_override
-Override color palette.
-- Type: `Dictionary`
-- Default: `{}`
-
-Example:
-```vim
-let g:ponokai_colors_override = {'bg0': ['#1e222a', '235'], 'bg2': ['#282c34', '236']}
-colorscheme ponokai
 ```
 
 ## FAQ
