@@ -1,8 +1,8 @@
 <p align="center">
-  <a href="https://github.com/edeneast/nightfox.nvim/stargazers"><img src="https://img.shields.io/github/stars/shawilly/ponokai?colorA=192330&colorB=f8e7b0&style=for-the-badge"></a>
-  <a href="https://github.com/edeneast/nightfox.nvim/issues"><img src="https://img.shields.io/github/issues/shawilly/ponokai?colorA=192330&colorB=98d4e7&style=for-the-badge"></a>
-  <a href="https://github.com/edeneast/nightfox.nvim/contributors"><img src="https://img.shields.io/github/contributors/shawilly/ponokai?colorA=192330&colorB=b4e49a&style=for-the-badge"></a>
-  <a href="https://github.com/EdenEast/nightfox.nvim/network/members"><img src="https://img.shields.io/github/forks/shawilly/ponokai?colorA=192330&colorB=bdb2ff&style=for-the-badge"></a>
+  <a href="https://github.com/shawilly/ponokai/stargazers"><img src="https://img.shields.io/github/stars/shawilly/ponokai?colorA=192330&colorB=f8e7b0&style=for-the-badge"></a>
+  <a href="https://github.com/shawilly/ponokai/issues"><img src="https://img.shields.io/github/issues/shawilly/ponokai?colorA=192330&colorB=98d4e7&style=for-the-badge"></a>
+  <a href="https://github.com/shawilly/ponokai/contributors"><img src="https://img.shields.io/github/contributors/shawilly/ponokai?colorA=192330&colorB=b4e49a&style=for-the-badge"></a>
+  <a href="https://github.com/shawilly/ponokai/network/members"><img src="https://img.shields.io/github/forks/shawilly/ponokai?colorA=192330&colorB=bdb2ff&style=for-the-badge"></a>
 </p>
 
 <div align="center">
@@ -157,7 +157,7 @@ Plug 'shawilly/ponokai'
    ```
 
 2. Copy files to your Vim directory:
-`sh
+   `sh
     cp /path/to/ponokai/autoload/ponokai.vim ~/.vim/autoload/
     cp /path/to/ponokai/colors/ponokai.vim ~/.vim/colors/
     cp /path/to/ponokai/doc/ponokai.txt ~/.vim/doc/
