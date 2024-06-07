@@ -644,7 +644,7 @@ if has('nvim-0.8')
   highlight! link @variable.member TSField
   highlight! link @variable.parameter TSParameter
 endif
-if has('nvim-0.9')
+if has('nvim-0.9') || has('nvim-0.10')
   highlight! link @lsp.type.class TSType
   highlight! link @lsp.type.comment TSComment
   highlight! link @lsp.type.decorator TSFunction
@@ -2062,7 +2062,7 @@ highlight! link jsxEscapeJs Purple
 highlight! link jsxAttrib Blue
 " }}}
 " nvim-treesitter/nvim-treesitter {{{
-if has('nvim-0.9')
+if has('nvim-0.9') || has('nvim-0.10')
   highlight! link @lsp.typemod.variable.defaultLibrary.javascript TSConstBuiltin
   highlight! link @lsp.typemod.variable.defaultLibrary.javascriptreact TSConstBuiltin
 endif
@@ -2230,7 +2230,7 @@ if has('nvim-0.8')
   highlight! link @tag.tsx tsxTSTag
   highlight! link @constructor.tsx tsxTSConstructor
 endif
-if has('nvim-0.9')
+if has('nvim-0.9') || has('nvim-0.10')
   highlight! link @lsp.typemod.variable.defaultLibrary.typescript TSConstBuiltin
   highlight! link @lsp.typemod.variable.defaultLibrary.typescriptreact TSConstBuiltin
 endif
