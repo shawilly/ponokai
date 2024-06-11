@@ -19,7 +19,7 @@ function! ponokai#get_configuration() "{{{
         \ 'spell_foreground': get(g:, 'ponokai_spell_foreground', 'none'),
         \ 'show_eob': get(g:, 'ponokai_show_eob', 1),
         \ 'float_style': get(g:, 'ponokai_float_style', 'bright'),
-        \ 'current_word': get(g:, 'ponokai_current_word', get(g:, 'ponokai_transparent_background', 0) == 0 ? 'grey background' : 'bold'),
+        \ 'current_word': get(g:, 'ponokai_current_word', get(g:, 'ponokai_transparent_background', 0) == 0 ? 'diff_green background bold' : 'bold'),
         \ 'inlay_hints_background': get(g:, 'ponokai_inlay_hints_background', 'none'),
         \ 'lightline_disable_bold': get(g:, 'ponokai_lightline_disable_bold', 0),
         \ 'diagnostic_text_highlight': get(g:, 'ponokai_diagnostic_text_highlight', 0),
@@ -82,7 +82,7 @@ function! ponokai#get_palette(style, colors_override) "{{{
           \ 'purple':     ['#ddb5f2',   '183'],
           \ 'grey':       ['#b4b6cf',   '250'],
           \ 'grey_dim':   ['#8d91af',   '246'],
-          \ 'none':       ['none',      'none']
+          \ 'none':       ['NONE',      'NONE']
           \ }
   elseif a:style ==# 'kangaroo'
     let palette = {
@@ -109,7 +109,7 @@ function! ponokai#get_palette(style, colors_override) "{{{
           \ 'purple':     ['#c6b3e3', '183'],
           \ 'grey':       ['#c0c0c7', '250'],
           \ 'grey_dim':   ['#b8b8c7', '246'],
-          \ 'none':       ['none', 'none']
+          \ 'none':       ['NONE',      'NONE']
           \ }
   elseif a:style ==# 'vampire'
     let palette = {
@@ -136,7 +136,7 @@ function! ponokai#get_palette(style, colors_override) "{{{
           \ 'purple':     ['#d9b3f9', '183'],
           \ 'grey':       ['#d0d1e0', '250'],
           \ 'grey_dim':   ['#b6b8d1', '246'],
-          \ 'none':       ['none', 'none']
+          \ 'none':       ['NONE',      'NONE']
           \ }
   endif
   return extend(palette, a:colors_override)
