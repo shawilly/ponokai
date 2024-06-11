@@ -5,6 +5,7 @@
 " Email: shane@shawilly.dev
 " License: MIT License
 " =============================================================================
+" \ 'current_word': get(g:, 'ponokai_current_word', get(g:, 'ponokai_transparent_background', 0) == 0 ? 'diff_green background bold' : 'bold'),
 
 function! ponokai#get_configuration() "{{{
   return {
@@ -19,7 +20,7 @@ function! ponokai#get_configuration() "{{{
         \ 'spell_foreground': get(g:, 'ponokai_spell_foreground', 'none'),
         \ 'show_eob': get(g:, 'ponokai_show_eob', 1),
         \ 'float_style': get(g:, 'ponokai_float_style', 'bright'),
-        \ 'current_word': get(g:, 'ponokai_current_word', get(g:, 'ponokai_transparent_background', 0) == 0 ? 'diff_green background bold' : 'bold'),
+        \ 'current_word': get(g:, 'ponokai_current_word', 'bold'),
         \ 'inlay_hints_background': get(g:, 'ponokai_inlay_hints_background', 'none'),
         \ 'lightline_disable_bold': get(g:, 'ponokai_lightline_disable_bold', 0),
         \ 'diagnostic_text_highlight': get(g:, 'ponokai_diagnostic_text_highlight', 0),
