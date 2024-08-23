@@ -96,8 +96,12 @@ call ponokai#highlight('ModeMsg', s:palette.fg, s:palette.none, 'bold')
 call ponokai#highlight('MoreMsg', s:palette.blue, s:palette.none, 'bold')
 call ponokai#highlight('MatchParen', s:palette.none, s:palette.bg4)
 call ponokai#highlight('NonText', s:palette.bg4, s:palette.none)
-call ponokai#highlight('Whitespace', s:palette.bg4, s:palette.none)
-call ponokai#highlight('SpecialKey', s:palette.bg4, s:palette.none)
+if has('nvim')
+  call ponokai#highlight('Whitespace', s:palette.bg4, s:palette.none)
+  call ponokai#highlight('SpecialKey', s:palette.purple, s:palette.none)
+else
+  call ponokai#highlight('SpecialKey', s:palette.purple, s:palette.none)
+endif
 call ponokai#highlight('Pmenu', s:palette.fg, s:palette.bg2)
 call ponokai#highlight('PmenuSbar', s:palette.none, s:palette.bg2)
 if s:configuration.menu_selection_background ==# 'blue'
@@ -140,6 +144,10 @@ if s:configuration.transparent_background == 2
   call ponokai#highlight('TabLine', s:palette.fg, s:palette.bg4)
   call ponokai#highlight('TabLineFill', s:palette.grey, s:palette.none)
   call ponokai#highlight('TabLineSel', s:palette.bg0, s:palette.bg_red)
+  if has('nvim')
+    call ponokai#highlight('WinBar', s:palette.fg, s:palette.none, 'bold')
+    call ponokai#highlight('WinBarNC', s:palette.grey, s:palette.none)
+  endif
 else
   call ponokai#highlight('StatusLine', s:palette.fg, s:palette.bg3)
   call ponokai#highlight('StatusLineTerm', s:palette.fg, s:palette.bg3)
@@ -148,6 +156,10 @@ else
   call ponokai#highlight('TabLine', s:palette.fg, s:palette.bg4)
   call ponokai#highlight('TabLineFill', s:palette.grey, s:palette.bg1)
   call ponokai#highlight('TabLineSel', s:palette.bg0, s:palette.bg_red)
+  if has('nvim')
+    call ponokai#highlight('WinBar', s:palette.fg, s:palette.none, 'bold')
+    call ponokai#highlight('WinBarNC', s:palette.grey, s:palette.none)
+  endif
 endif
 if s:configuration.dim_inactive_windows
   call ponokai#highlight('VertSplit', s:palette.bg4, s:palette.bg_dim)
@@ -164,8 +176,6 @@ call ponokai#highlight('debugBreakpoint', s:palette.bg0, s:palette.red)
 call ponokai#highlight('ToolbarButton', s:palette.bg0, s:palette.bg_blue)
 if has('nvim')
   call ponokai#highlight('Substitute', s:palette.bg0, s:palette.yellow)
-  highlight! link WinBar StatusLine
-  highlight! link WinBarNC StatusLineNC
   if s:configuration.diagnostic_text_highlight
     call ponokai#highlight('DiagnosticError', s:palette.red, s:palette.diff_red)
     call ponokai#highlight('DiagnosticUnderlineError', s:palette.none, s:palette.diff_red, 'undercurl', s:palette.red)
@@ -668,7 +678,7 @@ if has('nvim-0.9') || has('nvim-0.10')
   highlight! link @lsp.type.type TSType
   highlight! link @lsp.type.typeParameter TSTypeDefinition
   highlight! link @lsp.type.variable TSVariable
-  highlight! link DiagnosticUnnecessary WarningText
+  call ponokai#highlight('DiagnosticUnnecessary', s:palette.grey, s:palette.none)
 endif
 highlight! link TSModuleInfoGood Green
 highlight! link TSModuleInfoBad Red
@@ -1241,13 +1251,40 @@ highlight! link TargetFileName Grey
 call ponokai#highlight('InclineNormalNC', s:palette.grey, s:palette.bg2)
 " }}}
 " echasnovski/mini.nvim {{{
+call ponokai#highlight('MiniAnimateCursor', s:palette.none, s:palette.none, 'reverse,nocombine')
+call ponokai#highlight('MiniFilesFile', s:palette.fg, s:palette.none)
+if s:configuration.float_style ==# 'dim'
+  call ponokai#highlight('MiniFilesTitleFocused', s:palette.green, s:palette.bg_dim, 'bold')
+else
+  call ponokai#highlight('MiniFilesTitleFocused', s:palette.green, s:palette.bg2, 'bold')
+endif
+call ponokai#highlight('MiniHipatternsFixme', s:palette.bg0, s:palette.red, 'bold')
+call ponokai#highlight('MiniHipatternsHack', s:palette.bg0, s:palette.yellow, 'bold')
+call ponokai#highlight('MiniHipatternsNote', s:palette.bg0, s:palette.blue, 'bold')
+call ponokai#highlight('MiniHipatternsTodo', s:palette.bg0, s:palette.green, 'bold')
+call ponokai#highlight('MiniIconsAzure', s:palette.bg_blue, s:palette.none)
+call ponokai#highlight('MiniIconsBlue', s:palette.blue, s:palette.none)
+call ponokai#highlight('MiniIconsCyan', s:palette.blue, s:palette.none)
+call ponokai#highlight('MiniIconsGreen', s:palette.green, s:palette.none)
+call ponokai#highlight('MiniIconsGrey', s:palette.fg, s:palette.none)
+call ponokai#highlight('MiniIconsOrange', s:palette.orange, s:palette.none)
+call ponokai#highlight('MiniIconsPurple', s:palette.purple, s:palette.none)
+call ponokai#highlight('MiniIconsRed', s:palette.red, s:palette.none)
+call ponokai#highlight('MiniIconsYellow', s:palette.yellow, s:palette.none)
 call ponokai#highlight('MiniIndentscopePrefix', s:palette.none, s:palette.none, 'nocombine')
 call ponokai#highlight('MiniJump2dSpot', s:palette.red, s:palette.none, 'bold,nocombine')
+call ponokai#highlight('MiniJump2dSpotAhead', s:palette.blue, s:palette.none, 'nocombine')
+call ponokai#highlight('MiniJump2dSpotUnique', s:palette.yellow, s:palette.none, 'bold,nocombine')
+if s:configuration.float_style ==# 'dim'
+  call ponokai#highlight('MiniPickPrompt', s:palette.blue, s:palette.bg_dim)
+else
+  call ponokai#highlight('MiniPickPrompt', s:palette.blue, s:palette.bg2)
+endif
 call ponokai#highlight('MiniStarterCurrent', s:palette.none, s:palette.none, 'nocombine')
 call ponokai#highlight('MiniStatuslineDevinfo', s:palette.fg, s:palette.bg3)
 call ponokai#highlight('MiniStatuslineFileinfo', s:palette.fg, s:palette.bg3)
 call ponokai#highlight('MiniStatuslineFilename', s:palette.grey, s:palette.bg1)
-call ponokai#highlight('MiniStatuslineModeInactive', s:palette.grey, s:palette.bg1)
+call ponokai#highlight('MiniStatuslineInactive', s:palette.grey, s:palette.bg1)
 call ponokai#highlight('MiniStatuslineModeCommand', s:palette.bg0, s:palette.yellow, 'bold')
 call ponokai#highlight('MiniStatuslineModeInsert', s:palette.bg0, s:palette.bg_green, 'bold')
 call ponokai#highlight('MiniStatuslineModeNormal', s:palette.bg0, s:palette.bg_blue, 'bold')
@@ -1265,18 +1302,70 @@ call ponokai#highlight('MiniTestEmphasis', s:palette.none, s:palette.none, 'bold
 call ponokai#highlight('MiniTestFail', s:palette.red, s:palette.none, 'bold')
 call ponokai#highlight('MiniTestPass', s:palette.green, s:palette.none, 'bold')
 call ponokai#highlight('MiniTrailspace', s:palette.none, s:palette.red)
-highlight! link MiniStarterItemBullet Grey
-highlight! link MiniStarterItemPrefix Yellow
-highlight! link MiniStarterQuery Blue
+highlight! link MiniAnimateNormalFloat NormalFloat
+highlight! link MiniClueBorder FloatBorder
+highlight! link MiniClueDescGroup DiagnosticFloatingWarn
+highlight! link MiniClueDescSingle NormalFloat
+highlight! link MiniClueNextKey DiagnosticFloatingHint
+highlight! link MiniClueNextKeyWithPostkeys DiagnosticFloatingError
+highlight! link MiniClueSeparator DiagnosticFloatingInfo
+highlight! link MiniClueTitle FloatTitle
 highlight! link MiniCompletionActiveParameter LspSignatureActiveParameter
 highlight! link MiniCursorword CurrentWord
 highlight! link MiniCursorwordCurrent CurrentWord
+highlight! link MiniDepsChangeAdded diffAdded
+highlight! link MiniDepsChangeRemoved diffRemoved
+highlight! link MiniDepsHint DiagnosticHint
+highlight! link MiniDepsInfo DiagnosticInfo
+highlight! link MiniDepsMsgBreaking DiagnosticWarn
+highlight! link MiniDepsPlaceholder Comment
+highlight! link MiniDepsTitle Title
+highlight! link MiniDepsTitleError DiffDelete
+highlight! link MiniDepsTitleSame DiffChange
+highlight! link MiniDepsTitleUpdate DiffAdd
+highlight! link MiniDiffOverAdd DiffAdd
+highlight! link MiniDiffOverChange DiffText
+highlight! link MiniDiffOverContext DiffChange
+highlight! link MiniDiffOverDelete DiffDelete
+highlight! link MiniDiffSignAdd GreenSign
+highlight! link MiniDiffSignChange BlueSign
+highlight! link MiniDiffSignDelete RedSign
+highlight! link MiniFilesBorder FloatBorder
+highlight! link MiniFilesBorderModified DiagnosticFloatingWarn
+highlight! link MiniFilesCursorLine CursorLine
+highlight! link MiniFilesDirectory Directory
+highlight! link MiniFilesNormal NormalFloat
+highlight! link MiniFilesTitle FloatTitle
 highlight! link MiniIndentscopeSymbol Grey
 highlight! link MiniJump Search
+highlight! link MiniJump2dDim Comment
+highlight! link MiniMapNormal NormalFloat
+highlight! link MiniMapSymbolCount Special
+highlight! link MiniMapSymbolLine Title
+highlight! link MiniMapSymbolView Delimiter
+highlight! link MiniNotifyBorder FloatBorder
+highlight! link MiniNotifyNormal NormalFloat
+highlight! link MiniNotifyTitle FloatTitle
+highlight! link MiniOperatorsExchangeFrom IncSearch
+highlight! link MiniPickBorder FloatBorder
+highlight! link MiniPickBorderBusy DiagnosticFloatingWarn
+highlight! link MiniPickBorderText FloatTitle
+highlight! link MiniPickHeader DiagnosticFloatingHint
+highlight! link MiniPickIconDirectory Directory
+highlight! link MiniPickIconFile MiniPickNormal
+highlight! link MiniPickMatchCurrent CursorLine
+highlight! link MiniPickMatchMarked DiffChange
+highlight! link MiniPickMatchRanges DiagnosticFloatingHint
+highlight! link MiniPickNormal NormalFloat
+highlight! link MiniPickPreviewLine CursorLine
+highlight! link MiniPickPreviewRegion IncSearch
 highlight! link MiniStarterFooter Yellow
 highlight! link MiniStarterHeader Purple
 highlight! link MiniStarterInactive Comment
 highlight! link MiniStarterItem Normal
+highlight! link MiniStarterItemBullet Grey
+highlight! link MiniStarterItemPrefix Yellow
+highlight! link MiniStarterQuery Blue
 highlight! link MiniStarterSection Title
 highlight! link MiniSurround IncSearch
 highlight! link MiniTablineFill TabLineFill
