@@ -238,6 +238,20 @@ if has('nvim')
   highlight! link healthError Red
   highlight! link healthSuccess Green
   highlight! link healthWarning Yellow
+  if has('nvim-0.10')
+    call ponokai#highlight('Added', s:palette.green, s:palette.none)
+    call ponokai#highlight('Changed', s:palette.blue, s:palette.none)
+    call ponokai#highlight('Removed', s:palette.red, s:palette.none)
+    call ponokai#highlight('PmenuMatch', s:palette.green, s:palette.bg2, 'bold')
+    call ponokai#highlight('PmenuMatchSel', s:palette.bg0, s:palette.bg_blue, 'bold')
+    call ponokai#highlight('FloatFooter', s:palette.grey, s:palette.bg2)
+    call ponokai#highlight('DiagnosticOk', s:palette.green, s:palette.none)
+    call ponokai#highlight('SnippetTabstop', s:palette.none, s:palette.bg2)
+    call ponokai#highlight('DiagnosticDeprecated', s:palette.none, s:palette.none, 'strikethrough', s:palette.grey)
+  endif
+  if has('nvim-0.11')
+    call ponokai#highlight('ComplMatchIns', s:palette.green, s:palette.none)
+  endif
 endif
 " }}}
 " Syntax: {{{
@@ -654,7 +668,7 @@ if has('nvim-0.8')
   highlight! link @variable.member TSField
   highlight! link @variable.parameter TSParameter
 endif
-if has('nvim-0.9') || has('nvim-0.10')
+if has('nvim-0.9')
   highlight! link @lsp.type.class TSType
   highlight! link @lsp.type.comment TSComment
   highlight! link @lsp.type.decorator TSFunction
@@ -679,6 +693,13 @@ if has('nvim-0.9') || has('nvim-0.10')
   highlight! link @lsp.type.typeParameter TSTypeDefinition
   highlight! link @lsp.type.variable TSVariable
   call ponokai#highlight('DiagnosticUnnecessary', s:palette.grey, s:palette.none)
+  highlight! link @lsp.mod.deprecated DiagnosticDeprecated
+  highlight! link @lsp.mod.readonly BlueItalic
+  highlight! link @lsp.mod.static OrangeItalic
+  highlight! link @lsp.mod.abstract BlueItalic
+  highlight! link @lsp.mod.async GreenItalic
+  highlight! link @lsp.mod.defaultLibrary OrangeItalic
+  highlight! link @lsp.mod.documentation Grey
 endif
 highlight! link TSModuleInfoGood Green
 highlight! link TSModuleInfoBad Red
@@ -1051,11 +1072,26 @@ highlight! link BufTabLineActive TabLine
 highlight! link BufTabLineHidden TabLineFill
 highlight! link BufTabLineFill TabLineFill
 " }}}
-" liuchengxu/vim-which-key {{{
+" liuchengxu/vim-which-key / folke/which-key.nvim {{{
 highlight! link WhichKey Red
 highlight! link WhichKeySeperator Green
 highlight! link WhichKeyGroup Orange
 highlight! link WhichKeyDesc Blue
+" folke/which-key.nvim v3+
+highlight! link WhichKeyNormal NormalFloat
+highlight! link WhichKeyBorder FloatBorder
+highlight! link WhichKeyTitle FloatTitle
+highlight! link WhichKeySeparator Grey
+highlight! link WhichKeyValue Grey
+highlight! link WhichKeyIcon Blue
+highlight! link WhichKeyIconBlue Blue
+highlight! link WhichKeyIconCyan Blue
+highlight! link WhichKeyIconGreen Green
+highlight! link WhichKeyIconGrey Grey
+highlight! link WhichKeyIconOrange Orange
+highlight! link WhichKeyIconPurple Purple
+highlight! link WhichKeyIconRed Red
+highlight! link WhichKeyIconYellow Yellow
 " }}}
 " junegunn/limelight.vim {{{
 let g:limelight_conceal_ctermfg = s:palette.grey_dim[1]
@@ -1378,6 +1414,137 @@ call ponokai#highlight('LightspeedUnlabeledMatch', s:palette.fg, s:palette.none,
 call ponokai#highlight('LightspeedPendingOpArea', s:palette.bg0, s:palette.green)
 highlight! link LightspeedMaskedChar Purple
 highlight! link LightspeedGreyWash Grey
+" }}}
+" ggandor/leap.nvim {{{
+call ponokai#highlight('LeapLabelPrimary', s:palette.bg0, s:palette.red, 'bold')
+call ponokai#highlight('LeapLabelSecondary', s:palette.bg0, s:palette.blue, 'bold')
+call ponokai#highlight('LeapLabelSelected', s:palette.bg0, s:palette.green, 'bold')
+call ponokai#highlight('LeapMatch', s:palette.none, s:palette.none, 'underline')
+call ponokai#highlight('LeapBackdrop', s:palette.grey_dim, s:palette.none)
+" }}}
+" folke/flash.nvim {{{
+call ponokai#highlight('FlashLabel', s:palette.bg0, s:palette.red, 'bold')
+call ponokai#highlight('FlashMatch', s:palette.bg0, s:palette.green)
+call ponokai#highlight('FlashCurrent', s:palette.bg0, s:palette.yellow)
+call ponokai#highlight('FlashBackdrop', s:palette.grey_dim, s:palette.none)
+highlight! link FlashPrompt NormalFloat
+highlight! link FlashPromptIcon Blue
+highlight! link FlashCursor Cursor
+" }}}
+" HiPhish/rainbow-delimiters.nvim {{{
+highlight! link RainbowDelimiterRed Red
+highlight! link RainbowDelimiterYellow Yellow
+highlight! link RainbowDelimiterBlue Blue
+highlight! link RainbowDelimiterOrange Orange
+highlight! link RainbowDelimiterGreen Green
+highlight! link RainbowDelimiterViolet Purple
+highlight! link RainbowDelimiterCyan Blue
+" }}}
+" folke/lazy.nvim {{{
+call ponokai#highlight('LazyNormal', s:palette.fg, s:palette.bg_dim)
+call ponokai#highlight('LazyProgressDone', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('LazyProgressTodo', s:palette.grey, s:palette.none, 'bold')
+highlight! link LazyBorder FloatBorder
+highlight! link LazyButton PmenuSel
+highlight! link LazyButtonActive PmenuSel
+highlight! link LazyComment Comment
+highlight! link LazyCommit OrangeItalic
+highlight! link LazyCommitIssue Blue
+highlight! link LazyCommitType Red
+highlight! link LazyDimmed Grey
+highlight! link LazyDir Green
+highlight! link LazyError Red
+highlight! link LazyH1 Title
+highlight! link LazyH2 Blue
+highlight! link LazyInfo Blue
+highlight! link LazyProp Grey
+highlight! link LazyReasonCmd Orange
+highlight! link LazyReasonEvent Yellow
+highlight! link LazyReasonFt Blue
+highlight! link LazyReasonImport Green
+highlight! link LazyReasonKeys Purple
+highlight! link LazyReasonPlugin Blue
+highlight! link LazyReasonRequire Orange
+highlight! link LazyReasonRuntime Red
+highlight! link LazyReasonSource Green
+highlight! link LazyReasonStart Blue
+highlight! link LazySpecial Purple
+highlight! link LazyTaskDone Green
+highlight! link LazyTaskOutput Fg
+highlight! link LazyUrl TSURI
+highlight! link LazyValue Yellow
+highlight! link LazyWarning Yellow
+" }}}
+" folke/snacks.nvim {{{
+call ponokai#highlight('SnacksPickerMatch', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('SnacksIndent', s:palette.bg4, s:palette.none, 'nocombine')
+call ponokai#highlight('SnacksIndentScope', s:palette.grey, s:palette.none, 'nocombine')
+call ponokai#highlight('SnacksNotifierInfo', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierWarn', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierError', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierDebug', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierTrace', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierBorderInfo', s:palette.blue, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierBorderWarn', s:palette.yellow, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierBorderError', s:palette.red, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierBorderDebug', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierBorderTrace', s:palette.purple, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierIconInfo', s:palette.blue, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierIconWarn', s:palette.yellow, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierIconError', s:palette.red, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierIconDebug', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierIconTrace', s:palette.purple, s:palette.bg2)
+call ponokai#highlight('SnacksNotifierTitleInfo', s:palette.blue, s:palette.bg2, 'bold')
+call ponokai#highlight('SnacksNotifierTitleWarn', s:palette.yellow, s:palette.bg2, 'bold')
+call ponokai#highlight('SnacksNotifierTitleError', s:palette.red, s:palette.bg2, 'bold')
+call ponokai#highlight('SnacksNotifierTitleDebug', s:palette.grey, s:palette.bg2, 'bold')
+call ponokai#highlight('SnacksNotifierTitleTrace', s:palette.purple, s:palette.bg2, 'bold')
+call ponokai#highlight('SnacksDashboardHeader', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('SnacksDashboardFooter', s:palette.yellow, s:palette.none)
+call ponokai#highlight('SnacksDashboardTitle', s:palette.blue, s:palette.none, 'bold')
+call ponokai#highlight('SnacksDashboardDesc', s:palette.fg, s:palette.none)
+call ponokai#highlight('SnacksDashboardKey', s:palette.red, s:palette.none, 'bold')
+call ponokai#highlight('SnacksDashboardIcon', s:palette.green, s:palette.none)
+call ponokai#highlight('SnacksDashboardDir', s:palette.grey, s:palette.none)
+call ponokai#highlight('SnacksDashboardFile', s:palette.fg, s:palette.none)
+call ponokai#highlight('SnacksDashboardSpecial', s:palette.purple, s:palette.none)
+highlight! link SnacksPickerTitle FloatTitle
+highlight! link SnacksPickerBorder FloatBorder
+highlight! link SnacksPickerListTitle FloatTitle
+highlight! link SnacksPickerPreviewTitle FloatTitle
+highlight! link SnacksPickerInputTitle FloatTitle
+highlight! link SnacksPickerList NormalFloat
+highlight! link SnacksPickerPreview NormalFloat
+highlight! link SnacksPickerInput NormalFloat
+highlight! link SnacksPickerListCursorLine CursorLine
+highlight! link SnacksPickerPreviewCursorLine CursorLine
+highlight! link SnacksScratch NormalFloat
+highlight! link SnacksScratchTitle FloatTitle
+highlight! link SnacksZenNormal Normal
+" }}}
+" saghen/blink.cmp {{{
+call ponokai#highlight('BlinkCmpMenu', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('BlinkCmpMenuBorder', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('BlinkCmpMenuSelection', s:palette.bg0, s:palette.bg_blue)
+call ponokai#highlight('BlinkCmpLabelMatch', s:palette.green, s:palette.none, 'bold')
+call ponokai#highlight('BlinkCmpLabelDeprecated', s:palette.grey, s:palette.none, 'strikethrough')
+call ponokai#highlight('BlinkCmpDoc', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('BlinkCmpDocBorder', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('BlinkCmpDocCursorLine', s:palette.none, s:palette.bg1)
+call ponokai#highlight('BlinkCmpScrollBarThumb', s:palette.none, s:palette.grey)
+call ponokai#highlight('BlinkCmpScrollBarGutter', s:palette.none, s:palette.bg2)
+call ponokai#highlight('BlinkCmpSignatureHelp', s:palette.fg, s:palette.bg2)
+call ponokai#highlight('BlinkCmpSignatureHelpBorder', s:palette.grey, s:palette.bg2)
+call ponokai#highlight('BlinkCmpSignatureHelpActiveParameter', s:palette.bg0, s:palette.bg_blue)
+highlight! link BlinkCmpLabel Fg
+highlight! link BlinkCmpLabelDetail Grey
+highlight! link BlinkCmpLabelDescription Grey
+highlight! link BlinkCmpKind Blue
+highlight! link BlinkCmpSource Grey
+highlight! link BlinkCmpGhostText Grey
+for kind in g:ponokai_lsp_kind_color
+  execute "highlight! link BlinkCmpKind" . kind[0] . " " . kind[1]
+endfor
 " }}}
 endif
 " }}}
@@ -2151,7 +2318,7 @@ highlight! link jsxEscapeJs Purple
 highlight! link jsxAttrib Blue
 " }}}
 " nvim-treesitter/nvim-treesitter {{{
-if has('nvim-0.9') || has('nvim-0.10')
+if has('nvim-0.9')
   highlight! link @lsp.typemod.variable.defaultLibrary.javascript TSConstBuiltin
   highlight! link @lsp.typemod.variable.defaultLibrary.javascriptreact TSConstBuiltin
 endif
@@ -2319,7 +2486,7 @@ if has('nvim-0.8')
   highlight! link @tag.tsx tsxTSTag
   highlight! link @constructor.tsx tsxTSConstructor
 endif
-if has('nvim-0.9') || has('nvim-0.10')
+if has('nvim-0.9')
   highlight! link @lsp.typemod.variable.defaultLibrary.typescript TSConstBuiltin
   highlight! link @lsp.typemod.variable.defaultLibrary.typescriptreact TSConstBuiltin
 endif
